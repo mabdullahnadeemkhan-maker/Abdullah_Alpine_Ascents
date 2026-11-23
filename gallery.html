@@ -1,0 +1,1132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title> Alpine Ascents | Mountain Escapes | Gallery</title>
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.css" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+
+/* BASIC SETTINGS */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --sage: #879b7e;
+    --dark: #40583f;
+    --deep: #293e30;
+    --light: #c4d0b9;
+    --cream: #f5f1e6;
+    --text: #354735;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: var(--cream);
+    color: var(--text);
+}
+
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+/* CUSTOM MOUNTAIN & SUN ICON */
+
+.brand-icon {
+    width: 34px;
+    height: 34px;
+    vertical-align: middle;
+    display: inline-block;
+    flex-shrink: 0;
+}
+
+.label-icon {
+    width: 22px;
+    height: 22px;
+    vertical-align: -4px;
+    display: inline-block;
+    margin-right: 8px;
+}
+
+/* HEADER */
+
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 25px 8%;
+    background: transparent;
+}
+
+.logo {
+    color: white;
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: 5px;
+    line-height: 1.2;
+    white-space: nowrap;
+}
+
+.logo-top {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo span {
+    display: block;
+    font-size: 9px;
+    text-align: center;
+    letter-spacing: 5px;
+    margin-top: 4px;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 27px;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    font-size: 11px;
+    font-weight: 400;
+    padding-bottom: 9px;
+    border-bottom: none;
+    transition: .3s;
+    white-space: nowrap;
+}
+
+nav a:hover,
+nav a.active {
+    border-bottom: none;
+    color: #dce8d3;
+}
+
+.plan-btn {
+    text-decoration: none;
+    color: white;
+    border: 1px solid white;
+    padding: 13px 22px;
+    border-radius: 30px;
+    font-size: 10px;
+    white-space: nowrap;
+    transition: .3s;
+}
+
+.plan-btn:hover {
+    background: var(--sage);
+    border-color: var(--sage);
+}
+
+/* HERO SECTION */
+
+.hero {
+    min-height: 570px;
+
+    background:
+    linear-gradient(
+        90deg,
+        rgba(41, 62, 48, .85),
+        rgba(41, 62, 48, .20)
+    ),
+    url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=2000&q=90');
+
+    background-size: cover;
+    background-position: center;
+
+    display: flex;
+    align-items: center;
+
+    padding: 150px 9% 70px;
+    color: white;
+}
+
+.hero-content {
+    max-width: 700px;
+}
+
+.hero-label {
+    color: #dce8d3;
+    font-size: 11px;
+    letter-spacing: 5px;
+}
+
+.hero h1 {
+    font-size: clamp(48px, 6vw, 76px);
+    font-weight: 400;
+    line-height: 1.1;
+    margin: 20px 0;
+}
+
+.hero p {
+    font-size: 14px;
+    line-height: 2;
+    max-width: 510px;
+    margin-bottom: 30px;
+}
+
+.hero-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 15px;
+    text-decoration: none;
+    color: white;
+    font-size: 11px;
+    letter-spacing: 2px;
+}
+
+.arrow-circle {
+    width: 42px;
+    height: 42px;
+    border: 1px solid white;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    transition: .3s;
+}
+
+.hero-btn:hover .arrow-circle {
+    background: var(--sage);
+    transform: translateY(4px);
+}
+
+/* GALLERY INTRO */
+
+.gallery-intro {
+    background: #e9eddf;
+    text-align: center;
+    padding: 75px 8% 45px;
+}
+
+.section-label {
+    color: var(--dark);
+    font-size: 11px;
+    letter-spacing: 4px;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+}
+
+.gallery-intro h2 {
+    color: var(--dark);
+    font-size: 42px;
+    margin: 17px 0;
+}
+
+.gallery-intro p {
+    max-width: 650px;
+    margin: auto;
+    color: #536650;
+    font-size: 13px;
+    line-height: 2;
+}
+
+/* FILTER BUTTONS */
+
+.gallery-section {
+    background: #e9eddf;
+    padding: 25px 6% 85px;
+}
+
+.filter-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 13px;
+    margin-bottom: 40px;
+}
+
+.filter-btn {
+    border: 1px solid #879b7e;
+    background: var(--cream);
+    color: var(--dark);
+    padding: 11px 25px;
+    border-radius: 30px;
+    font-family: Poppins;
+    font-size: 11px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    background: var(--dark);
+    color: white;
+    border-color: var(--dark);
+}
+
+/* GALLERY GRID */
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+/* GALLERY CARD */
+
+.gallery-card {
+    position: relative;
+    height: 300px;
+    border-radius: 15px;
+    overflow: hidden;
+    background: var(--sage);
+    box-shadow: 0 5px 15px #263b2b15;
+    cursor: pointer;
+    transition: .4s;
+}
+
+.gallery-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 12px 25px #263b2b25;
+}
+
+.gallery-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: .6s;
+}
+
+.gallery-card:hover img {
+    transform: scale(1.10);
+}
+
+/* IMAGE OVERLAY */
+
+.gallery-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 45px 22px 22px;
+
+    background: linear-gradient(
+        transparent,
+        rgba(25, 48, 35, .9)
+    );
+
+    color: white;
+    transition: .4s;
+}
+
+.gallery-overlay span {
+    color: #dce8d3;
+    font-size: 10px;
+    letter-spacing: 3px;
+}
+
+.gallery-overlay h3 {
+    font-size: 23px;
+    font-weight: 500;
+    margin-top: 8px;
+}
+
+.gallery-overlay p {
+    font-size: 11px;
+    color: #e8eee2;
+    margin-top: 5px;
+}
+
+/* HIDE FILTERED CARDS */
+
+.gallery-card.hide {
+    display: none;
+}
+
+/* FEATURE SECTION */
+
+.feature {
+    background: var(--sage);
+    padding: 80px 7%;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 55px;
+    align-items: center;
+}
+
+.feature-img {
+    height: 370px;
+    overflow: hidden;
+    border-radius: 16px;
+    border: 3px solid #e9eddf;
+}
+
+.feature-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: .5s;
+}
+
+.feature-img:hover img {
+    transform: scale(1.07);
+}
+
+.feature-content .section-label {
+    color: #f5f1e6;
+}
+
+.feature-content h2 {
+    font-size: 42px;
+    color: white;
+    line-height: 1.2;
+    margin: 18px 0;
+}
+
+.feature-content p {
+    font-size: 13px;
+    line-height: 2;
+    color: #f5f1e6;
+    margin-bottom: 25px;
+}
+
+.green-btn {
+    display: inline-block;
+    background: var(--dark);
+    color: white;
+    text-decoration: none;
+    padding: 13px 25px;
+    border-radius: 30px;
+    font-size: 11px;
+    transition: .3s;
+}
+
+.green-btn:hover {
+    background: var(--deep);
+    transform: translateY(-3px);
+}
+
+/* GALLERY STATS */
+
+.stats {
+    background: var(--cream);
+    padding: 65px 7%;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    text-align: center;
+}
+
+.stat-box {
+    padding: 25px 15px;
+    border-right: 1px solid #b9c6ae;
+}
+
+.stat-box:last-child {
+    border-right: none;
+}
+
+.stat-box h2 {
+    color: var(--dark);
+    font-size: 39px;
+}
+
+.stat-box p {
+    color: #667a60;
+    font-size: 11px;
+    letter-spacing: 2px;
+    margin-top: 8px;
+}
+
+/* CTA SECTION */
+
+.cta {
+    margin: 0 5% 35px;
+    min-height: 220px;
+
+    background:
+    linear-gradient(
+        90deg,
+        rgba(41, 62, 48, .88),
+        rgba(41, 62, 48, .25)
+    ),
+    url('https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&fit=crop&w=1600&q=85');
+
+    background-size: cover;
+    background-position: center;
+
+    border-radius: 17px;
+    padding: 40px 5%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+
+    color: white;
+}
+
+.cta h2 {
+    font-size: 39px;
+    margin-bottom: 12px;
+}
+
+.cta p {
+    font-size: 13px;
+    font-style: italic;
+}
+
+.cta .green-btn {
+    background: var(--cream);
+    color: var(--dark);
+}
+
+/* FOOTER */
+
+footer {
+    background: var(--deep);
+    color: var(--cream);
+    padding: 45px 6% 20px;
+}
+
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 25px;
+    padding-bottom: 28px;
+}
+
+.footer-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 27px;
+    letter-spacing: 4px;
+}
+
+.footer-logo-top {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer-logo span {
+    display: block;
+    font-family: Poppins;
+    font-size: 9px;
+    letter-spacing: 5px;
+    margin-top: 4px;
+}
+
+.footer-links {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.footer-links a {
+    color: var(--cream);
+    text-decoration: none;
+    font-size: 11px;
+    transition: .3s;
+}
+
+.footer-links a:hover {
+    color: var(--light);
+}
+
+.social {
+    display: flex;
+    gap: 12px;
+}
+
+.social a {
+    width: 34px;
+    height: 34px;
+    background: var(--cream);
+    color: var(--dark);
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    text-decoration: none;
+    font-size: 13px;
+}
+
+.footer-bottom {
+    border-top: 1px solid #82977e;
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 15px;
+    color: #e2eadc;
+    font-size: 11px;
+}
+
+/* TABLET RESPONSIVE */
+
+@media(max-width: 1050px) {
+
+    header {
+        padding: 22px 4%;
+    }
+
+    nav {
+        gap: 13px;
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .feature {
+        gap: 30px;
+    }
+}
+
+/* MOBILE RESPONSIVE */
+
+@media(max-width: 650px) {
+
+    header {
+        padding: 18px 5%;
+        flex-wrap: wrap;
+        gap: 17px;
+    }
+
+    .logo {
+        font-size: 20px;
+    }
+
+    nav {
+        width: 100%;
+        gap: 12px;
+        flex-wrap: wrap;
+    }
+
+    nav a {
+        font-size: 10px;
+    }
+
+    .plan-btn {
+        display: none;
+    }
+
+    .hero {
+        min-height: 550px;
+        padding: 180px 6% 60px;
+    }
+
+    .hero h1 {
+        font-size: 43px;
+    }
+
+    .hero p {
+        font-size: 12px;
+    }
+
+    .gallery-intro {
+        padding: 55px 6% 30px;
+    }
+
+    .gallery-intro h2 {
+        font-size: 32px;
+    }
+
+    .gallery-section {
+        padding: 20px 6% 55px;
+    }
+
+    .filter-buttons {
+        gap: 9px;
+    }
+
+    .filter-btn {
+        padding: 9px 17px;
+        font-size: 10px;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .gallery-card {
+        height: 270px;
+    }
+
+    .feature {
+        grid-template-columns: 1fr;
+        padding: 50px 6%;
+    }
+
+    .feature-img {
+        height: 250px;
+    }
+
+    .feature-content h2 {
+        font-size: 32px;
+    }
+
+    .stats {
+        grid-template-columns: 1fr;
+        padding: 40px 8%;
+        gap: 10px;
+    }
+
+    .stat-box {
+        border-right: none;
+        border-bottom: 1px solid #b9c6ae;
+    }
+
+    .stat-box:last-child {
+        border-bottom: none;
+    }
+
+    .cta {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 30px;
+    }
+
+    .cta h2 {
+        font-size: 29px;
+    }
+
+    .footer-top,
+    .footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- Reusable SVG Definition for Mountain & Sun Icon -->
+<svg style="display: none;">
+    <symbol id="mountain-sun-icon" viewBox="0 0 64 64">
+        <circle cx="48" cy="18" r="7" fill="currentColor"/>
+        <path d="M8 52 C6 52 5 50 6.5 48 L21 22 C22.5 19.5 25.5 19.5 27 22 L34 34 L39 27 C40.5 25 43.5 25 45 27 L57.5 48 C59 50 58 52 56 52 Z" fill="currentColor"/>
+    </symbol>
+</svg>
+
+<!-- HEADER -->
+
+<header>
+
+    <div class="logo">
+        <div class="logo-top">
+            <svg class="brand-icon" aria-hidden="true"><use href="#mountain-sun-icon"></use></svg>
+            Alpine Ascents
+        </div>
+        <span><small>MOUNTAIN ESCAPES</small></span>
+    </div>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About us</a>
+        <a href="Typeand style.html">Type & Styles</a>
+        <a href="technique.html">Techniques & Equipment</a>
+        <a href="gallery.html" class="active">Gallery</a>
+    </nav>
+
+    <a href="contact.html" class="plan-btn">
+        Plan Your Escape ↗
+    </a>
+
+</header>
+
+<!-- HERO SECTION -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <span class="hero-label">
+            OUR ADVENTURE COLLECTION
+        </span>
+
+        <h1>
+            Explore the Beauty.<br>
+            Capture the Journey.
+        </h1>
+
+        <p>
+            Discover breathtaking mountain views,
+            peaceful nature escapes and unforgettable
+            outdoor adventures through our gallery.
+        </p>
+
+        <a href="#gallery" class="hero-btn">
+            <span class="arrow-circle">↓</span>
+            EXPLORE GALLERY
+        </a>
+
+    </div>
+
+</section>
+
+<!-- GALLERY INTRO -->
+
+<section class="gallery-intro">
+
+    <span class="section-label">
+        <svg class="label-icon" aria-hidden="true"><use href="#mountain-sun-icon"></use></svg>
+        NORTH OUTDOORS GALLERY
+    </span>
+
+    <h2>Moments in the Mountains</h2>
+
+    <p>
+        Every mountain tells a story and every journey
+        creates a memory. Explore our collection of
+        beautiful landscapes, outdoor adventures,
+        trekking experiences and peaceful nature views.
+    </p>
+
+</section>
+
+<!-- GALLERY SECTION -->
+
+<section class="gallery-section" id="gallery">
+
+    <!-- FILTER BUTTONS -->
+
+    <div class="filter-buttons">
+
+        <button class="filter-btn active" data-filter="all">
+            All Photos
+        </button>
+
+        <button class="filter-btn" data-filter="mountains">
+            Mountains
+        </button>
+
+        <button class="filter-btn" data-filter="trekking">
+            Trekking
+        </button>
+
+        <button class="filter-btn" data-filter="camping">
+            Camping
+        </button>
+
+        <button class="filter-btn" data-filter="nature">
+            Nature
+        </button>
+
+    </div>
+
+    <!-- IMAGE GRID -->
+
+    <div class="gallery-grid">
+
+        <div class="gallery-card" data-category="mountains">
+
+            <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=900&q=85" alt="Beautiful mountain landscape">
+
+            <div class="gallery-overlay">
+                <span>MOUNTAIN ESCAPE</span>
+                <h3>Majestic Mountains</h3>
+                <p>Discover the beauty of mountain peaks.</p>
+            </div>
+
+        </div>
+
+        <div class="gallery-card" data-category="trekking">
+
+            <img src="https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&w=900&q=85" alt="Mountain trekking">
+
+            <div class="gallery-overlay">
+                <span>ADVENTURE</span>
+                <h3>Mountain Trekking</h3>
+                <p>Explore amazing trails and pathways.</p>
+            </div>
+
+        </div>
+
+        <div class="gallery-card" data-category="camping">
+
+            <img src="https://images.unsplash.com/photo-1478131143081-80f7f84ca84d?auto=format&fit=crop&w=900&q=85" alt="Outdoor camping">
+
+            <div class="gallery-overlay">
+                <span>OUTDOOR LIFE</span>
+                <h3>Peaceful Camping</h3>
+                <p>Enjoy beautiful nights under the stars.</p>
+            </div>
+
+        </div>
+
+        <div class="gallery-card" data-category="nature">
+
+            <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=900&q=85" alt="Green forest">
+
+            <div class="gallery-overlay">
+                <span>NATURE</span>
+                <h3>Green Forests</h3>
+                <p>Experience the calm of nature.</p>
+            </div>
+
+        </div>
+
+        <div class="gallery-card" data-category="mountains">
+
+            <img src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=900&q=85" alt="Mountain lake">
+
+            <div class="gallery-overlay">
+                <span>LANDSCAPE</span>
+                <h3>Mountain Lakes</h3>
+                <p>Beautiful reflections and scenic views.</p>
+            </div>
+
+        </div>
+
+        <div class="gallery-card" data-category="trekking">
+
+            <img src="https://images.unsplash.com/photo-1464278533981-50106e6176b1?auto=format&fit=crop&w=900&q=85" alt="Mountain climbing">
+
+            <div class="gallery-overlay">
+                <span>EXPLORATION</span>
+                <h3>Alpine Adventures</h3>
+                <p>Discover new mountain experiences.</p>
+            </div>
+
+        </div>
+
+        <div class="gallery-card" data-category="camping">
+
+            <img src="https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?auto=format&fit=crop&w=900&q=85" alt="Tent camping">
+
+            <div class="gallery-overlay">
+                <span>CAMPING LIFE</span>
+                <h3>Into the Wild</h3>
+                <p>Find comfort in the great outdoors.</p>
+            </div>
+
+        </div>
+
+        <div class="gallery-card" data-category="nature">
+
+            <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=85" alt="Beautiful natural scenery">
+
+            <div class="gallery-overlay">
+                <span>NATURAL BEAUTY</span>
+                <h3>Nature Escapes</h3>
+                <p>Enjoy the peaceful side of adventure.</p>
+            </div>
+
+        </div>
+
+        <div class="gallery-card" data-category="mountains">
+
+            <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=900&q=85" alt="Snow covered mountains">
+
+            <div class="gallery-overlay">
+                <span>SNOWY PEAKS</span>
+                <h3>Winter Mountains</h3>
+                <p>Explore breathtaking snowy landscapes.</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- FEATURE SECTION -->
+
+<section class="feature">
+
+    <div class="feature-img">
+
+        <img src="https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&fit=crop&w=1000&q=85" alt="Wildlife and mountain nature">
+
+    </div>
+
+    <div class="feature-content">
+
+        <span class="section-label">
+            <svg class="label-icon" aria-hidden="true" style="color: #f5f1e6;"><use href="#mountain-sun-icon"></use></svg>
+            THE BEAUTY OF NATURE
+        </span>
+
+        <h2>
+            Nature is the Greatest Adventure
+        </h2>
+
+        <p>
+            From peaceful forests to magnificent
+            mountain peaks, nature offers endless
+            opportunities to explore and discover.
+            Respect the environment, enjoy every
+            moment and create memories that last forever.
+        </p>
+
+        <a href="contact.html" class="green-btn">
+            Plan Your Adventure →
+        </a>
+
+    </div>
+
+</section>
+
+<!-- GALLERY STATS -->
+
+<section class="stats">
+
+    <div class="stat-box">
+        <h2>50+</h2>
+        <p>ADVENTURE MOMENTS</p>
+    </div>
+
+    <div class="stat-box">
+        <h2>20+</h2>
+        <p>BEAUTIFUL DESTINATIONS</p>
+    </div>
+
+    <div class="stat-box">
+        <h2>100%</h2>
+        <p>LOVE FOR NATURE</p>
+    </div>
+
+</section>
+
+<!-- CALL TO ACTION -->
+
+<section class="cta">
+
+    <div>
+
+        <h2>Ready for Your Next Adventure?</h2>
+
+        <p>
+            Explore new places, enjoy nature and
+            make unforgettable memories.
+        </p>
+
+    </div>
+
+    <a href="contact.html" class="green-btn">
+        Get Started →
+    </a>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+    <div class="footer-top">
+
+        <div class="footer-logo">
+            <div class="footer-logo-top">
+                <svg class="brand-icon" aria-hidden="true"><use href="#mountain-sun-icon"></use></svg>
+                NORTH
+            </div>
+            <span>OUTDOORS</span>
+        </div>
+
+        <div class="footer-links">
+
+            <a href="index.html">Home</a>
+            <a href="about.html">About US</a>
+            <a href="typeand style.html">Types & Styles</a>
+            <a href="technique.html">Techniques</a>
+            <a href="gallery.html">Gallery</a>
+
+        </div>
+
+        <div class="social">
+
+            <a href="#">f</a>
+            <a href="#">◎</a>
+            <a href="#">▶</a>
+            <a href="#">♥</a>
+
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+
+        <p>
+            © 2025 North Outdoors. All Rights Reserved.
+        </p>
+
+        <p>
+            Explore • Respect • Preserve
+        </p>
+
+    </div>
+
+</footer>
+
+<!-- JAVASCRIPT FOR GALLERY FILTER -->
+
+<script>
+
+const filterButtons = document.querySelectorAll(".filter-btn");
+
+const galleryCards = document.querySelectorAll(".gallery-card");
+
+filterButtons.forEach(button => {
+
+    button.addEventListener("click", () => {
+
+        // Remove active class from all buttons
+
+        filterButtons.forEach(btn => {
+            btn.classList.remove("active");
+        });
+
+        // Add active class to clicked button
+
+        button.classList.add("active");
+
+        const filterValue = button.getAttribute("data-filter");
+
+        // Filter gallery images
+
+        galleryCards.forEach(card => {
+
+            const category = card.getAttribute("data-category");
+
+            if (filterValue === "all" || category === filterValue) {
+
+                card.classList.remove("hide");
+
+            } else {
+
+                card.classList.add("hide");
+
+            }
+
+        });
+
+    });
+
+});
+
+</script>
+
+</body>
+</html>
