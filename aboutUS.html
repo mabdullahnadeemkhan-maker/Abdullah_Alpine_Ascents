@@ -1,0 +1,1210 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About &amp; History — Alpine Ascents | Mountain Escapes</title>
+
+  <!-- Google Fonts: Cormorant Garamond & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Tailwind Custom Palette: Sage Green & Warm Cream -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            sage: {
+              950: '#1D2923',
+              900: '#2A3B32',
+              800: '#3E5649',
+              700: '#4F6B5B',
+              500: '#7D9587',
+              400: '#97AEA0',
+              200: '#D6E0D8',
+              100: '#EBF0EC',
+            },
+            cream: {
+              50: '#FBF8F3',
+              100: '#F5EFE6',
+              200: '#E9DFCE',
+              300: '#D9CBB4',
+            }
+          },
+          fontFamily: {
+            serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'Inter', 'sans-serif'],
+          },
+          boxShadow: {
+            'soft': '0 20px 50px -12px rgba(29, 41, 35, 0.14)',
+            'cream-glow': '0 24px 60px -15px rgba(29, 41, 35, 0.22)',
+          }
+        }
+      }
+    };
+  </script>
+
+  <style>
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: #F5EFE6;
+      color: #1D2923;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, .font-editorial {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+    }
+
+    /* Timeline transition */
+    .timeline-content-fade {
+      animation: fadeSlide 0.45s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    }
+    @keyframes fadeSlide {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Modal entrance transition */
+    .modal-pop {
+      animation: modalPop 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+    @keyframes modalPop {
+      from {
+        opacity: 0;
+        transform: scale(0.96) translateY(12px);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+      }
+    }
+
+    /* Hide scrollbar for mobile timeline tabs */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+</head>
+<body class="antialiased selection:bg-sage-800 selection:text-cream-100">
+
+  <!-- ==================== 1. TRANSPARENT EDITORIAL NAVBAR ==================== -->
+  <header id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500 bg-transparent border-b border-transparent">
+    <nav class="max-w-7xl mx-auto px-5 sm:px-10 py-5 sm:py-6 flex items-center justify-between gap-6">
+      
+      <!-- Left Brand Lockup: Solid Cream Double-Peak Icon + ALPINE ASCENTS / MOUNTAIN ESCAPES -->
+      <a href="#top" class="flex flex-col items-start group focus:outline-none">
+        <div class="flex items-center gap-3">
+          <svg class="w-7 h-5 sm:w-8 sm:h-6 text-cream-100 shrink-0 transition-transform duration-300 group-hover:scale-105" viewBox="0 0 36 26" fill="currentColor" aria-hidden="true">
+            <circle cx="27.5" cy="5.5" r="3" />
+            <path d="M1.5 23.5L11.2 7.8C12.1 6.4 14.1 6.4 15 7.8L19.6 15.2L22.6 11.4C23.5 10.3 25.2 10.3 26.1 11.5L34.5 23.5C35.1 24.4 34.5 25.5 33.4 25.5H2.6C1.5 25.5 0.9 24.4 1.5 23.5Z" />
+          </svg>
+          <span class="font-sans text-base sm:text-xl font-medium uppercase tracking-[0.28em] text-cream-100 leading-none">
+            ALPINE ASCENTS
+          </span>
+        </div>
+        <span class="font-sans text-[9px] sm:text-[10px] font-normal uppercase tracking-[0.38em] text-cream-200/85 mt-1.5 pl-0.5">
+          MOUNTAIN ESCAPES
+        </span>
+      </a>
+
+      <!-- Center Clean Horizontal Navigation Links -->
+      <div class="hidden lg:flex items-center gap-7 xl:gap-9">
+        <a href="index.html" data-nav="home" onclick="handleNavClick(event, 'index')" class="nav-link relative py-1.5 text-sm font-normal text-cream-100/80 hover:text-cream-100 transition-colors after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[1.5px] after:w-0 hover:after:w-full after:bg-cream-100 after:transition-all after:duration-300">
+          Home
+        </a>
+        <a href="aboutus.html" data-nav="about" onclick="handleNavClick(event, 'aboutus')" class="nav-link relative py-1.5 text-sm font-medium text-cream-100 border-b-[1.5px] border-cream-100">
+          About US 
+        </a>
+        <a href="typeand style.html" data-nav="styles" onclick="handleNavClick(event, 'typeand styles')" class="nav-link relative py-1.5 text-sm font-normal text-cream-100/80 hover:text-cream-100 transition-colors after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[1.5px] after:w-0 hover:after:w-full after:bg-cream-100 after:transition-all after:duration-300">
+          Type and Style
+        </a>
+        <a href="technique.html" data-nav="techniques" onclick="handleNavClick(event, 'technique')" class="nav-link relative py-1.5 text-sm font-normal text-cream-100/80 hover:text-cream-100 transition-colors after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[1.5px] after:w-0 hover:after:w-full after:bg-cream-100 after:transition-all after:duration-300">
+          Techniques &amp; Equipment
+        </a>
+        <a href="gallery.html" data-nav="gallery" onclick="handleNavClick(event, 'gallery')" class="nav-link relative py-1.5 text-sm font-normal text-cream-100/80 hover:text-cream-100 transition-colors after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[1.5px] after:w-0 hover:after:w-full after:bg-cream-100 after:transition-all after:duration-300">
+          Gallery
+        </a>
+      </div>
+
+      <!-- Right Outline Pill CTA ("Plan Your Escape ↗") + Mobile Menu Toggle -->
+      <div class="flex items-center gap-3">
+        <button type="button" onclick="openBookingModal()" class="inline-flex items-center gap-2 px-5 sm:px-7 py-2.5 sm:py-3 rounded-full bg-transparent hover:bg-cream-100/15 border border-cream-100/75 hover:border-cream-100 text-cream-100 text-xs sm:text-sm font-normal tracking-wide transition-all duration-300 active:scale-95 cursor-pointer">
+          <span>Plan Your Escape</span>
+          <span aria-hidden="true" class="text-xs sm:text-sm leading-none">↗</span>
+        </button>
+
+        <button type="button" id="mobile-menu-btn" aria-label="Toggle Menu" aria-expanded="false" class="lg:hidden p-2.5 rounded-full border border-cream-100/35 text-cream-100 hover:bg-cream-100/15 transition cursor-pointer">
+          <svg id="menu-icon-open" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 7h16M4 12h16M4 17h16" />
+          </svg>
+          <svg id="menu-icon-close" class="w-5 h-5 hidden" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Mobile Dropdown Menu -->
+    <div id="mobile-menu" class="hidden lg:hidden mx-4 sm:mx-8 mt-1 rounded-3xl bg-sage-950/95 backdrop-blur-xl border border-cream-100/20 p-5 shadow-2xl">
+      <div class="flex flex-col space-y-2">
+        <a href="#top" onclick="handleNavClick(event, 'home'); closeMobileMenu();" class="px-4 py-3 rounded-2xl text-sm text-cream-100/80 hover:bg-cream-100/10 hover:text-cream-100">Home</a>
+        <a href="#vision-mission" onclick="handleNavClick(event, 'aboutus'); closeMobileMenu();" class="px-4 py-3 rounded-2xl text-sm font-medium bg-cream-100/15 text-cream-100 border-l-2 border-cream-100">About US &amp; History</a>
+        <a href="#styles" onclick="handleNavClick(event, 'styles'); closeMobileMenu();" class="px-4 py-3 rounded-2xl text-sm text-cream-100/80 hover:bg-cream-100/10 hover:text-cream-100">Type and Style</a>
+        <a href="#techniques" onclick="handleNavClick(event, 'techniques'); closeMobileMenu();" class="px-4 py-3 rounded-2xl text-sm text-cream-100/80 hover:bg-cream-100/10 hover:text-cream-100">Techniques &amp; Equipment</a>
+        <a href="#gallery" onclick="handleNavClick(event, 'gallery'); closeMobileMenu();" class="px-4 py-3 rounded-2xl text-sm text-cream-100/80 hover:bg-cream-100/10 hover:text-cream-100">Gallery</a>
+        <button type="button" onclick="closeMobileMenu(); openBookingModal();" class="mt-2 w-full py-3 rounded-2xl bg-cream-100 text-sage-950 text-sm font-medium text-center">Plan Your Escape ↗</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==================== 2. HERO SECTION ==================== -->
+  <section id="top" class="relative min-h-[88vh] flex flex-col justify-between pt-32 pb-12 px-4 sm:px-8 overflow-hidden bg-sage-950">
+    <!-- Full-Bleed Alpine Cabin Background with Rich Sage Overlay -->
+    <div class="absolute inset-0 z-0">
+      <img
+        src="https://images.unsplash.com/photo-1510798831971-661eb04b3739?auto=format&fit=crop&w=2000&q=85"
+        onerror="this.src='https://placehold.co/1920x1080/1D2923/F5EFE6?text=Alpine+Ascents+Sanctuary'"
+        alt="Luxury A-frame timber cabin surrounded by misty alpine peaks"
+        class="w-full h-full object-cover object-center"
+      />
+      <div class="absolute inset-0 bg-gradient-to-r from-sage-950/92 via-sage-900/75 to-sage-950/50"></div>
+      <div class="absolute inset-0 bg-gradient-to-t from-sage-950 via-transparent to-sage-950/60"></div>
+    </div>
+
+    <!-- Hero Headline & Subcopy -->
+    <div class="relative z-10 max-w-7xl mx-auto w-full my-auto pt-8 pb-12">
+      <div class="max-w-3xl">
+        <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-cream-100/10 backdrop-blur-md border border-cream-100/20 mb-6">
+          <span class="w-1.5 h-1.5 rounded-full bg-sage-500"></span>
+          <span class="text-[11px] font-medium uppercase tracking-[0.26em] text-cream-200">About Us &amp; Heritage</span>
+        </div>
+
+        <h1 class="font-serif text-5xl sm:text-6xl md:text-7xl lg:text-[5.15rem] font-normal text-cream-100 leading-[1.05] tracking-tight mb-6">
+          Where Nature Meets Luxury<br />
+          <span class="italic font-normal text-cream-200">— Our Story &amp; Heritage</span>
+        </h1>
+
+        <p class="text-base sm:text-lg text-cream-200/85 font-light leading-relaxed max-w-xl mb-9">
+          Since 2012, Alpine Ascents has curated architectural sanctuaries where warm timber craftsmanship meets untouched mountain wilderness and mirror-still lakesides.
+        </p>
+
+        <div class="flex flex-wrap items-center gap-4">
+          <a href="#vision-mission" class="inline-flex items-center gap-3 px-6 py-3.5 rounded-full bg-cream-100 text-sage-950 font-medium text-sm hover:bg-cream-200 transition shadow-lg active:scale-95">
+            <span>Our Vision &amp; Mission</span>
+            <span class="w-6 h-6 rounded-full bg-sage-950 text-cream-100 flex items-center justify-center text-xs">↓</span>
+          </a>
+          <a href="#history" class="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-sage-900/65 backdrop-blur-md border border-cream-100/25 text-cream-100 text-sm hover:bg-sage-800/80 transition active:scale-95">
+            <span>Explore Our History</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Glassmorphic Sage Strip with 4 Key Metrics -->
+    <div class="relative z-10 max-w-7xl mx-auto w-full">
+      <div class="rounded-3xl bg-sage-900/60 backdrop-blur-xl border border-cream-100/15 px-6 sm:px-10 py-6 grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+        <!-- Metric 1 -->
+        <div class="flex items-start gap-3.5">
+          <div class="p-2.5 rounded-2xl bg-cream-100/10 text-cream-200 shrink-0">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+            </svg>
+          </div>
+          <div>
+            <p class="font-serif text-3xl sm:text-4xl text-cream-100 leading-none">120+</p>
+            <p class="text-xs text-sage-200/80 mt-1.5">Unique Sanctuaries</p>
+          </div>
+        </div>
+
+        <!-- Metric 2 -->
+        <div class="flex items-start gap-3.5">
+          <div class="p-2.5 rounded-2xl bg-cream-100/10 text-cream-200 shrink-0">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
+            </svg>
+          </div>
+          <div>
+            <p class="font-serif text-3xl sm:text-4xl text-cream-100 leading-none">25K+</p>
+            <p class="text-xs text-sage-200/80 mt-1.5">Happy Guests</p>
+          </div>
+        </div>
+
+        <!-- Metric 3 -->
+        <div class="flex items-start gap-3.5">
+          <div class="p-2.5 rounded-2xl bg-cream-100/10 text-cream-200 shrink-0">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
+            </svg>
+          </div>
+          <div>
+            <p class="font-serif text-3xl sm:text-4xl text-cream-100 leading-none">4.9</p>
+            <p class="text-xs text-sage-200/80 mt-1.5">Guest Rating</p>
+          </div>
+        </div>
+
+        <!-- Metric 4 -->
+        <div class="flex items-start gap-3.5">
+          <div class="p-2.5 rounded-2xl bg-cream-100/10 text-cream-200 shrink-0">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+          <div>
+            <p class="font-serif text-3xl sm:text-4xl text-cream-100 leading-none">14 Yrs</p>
+            <p class="text-xs text-sage-200/80 mt-1.5">Alpine Heritage</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 3. OUR VISION & OUR MISSION CARDS ==================== -->
+  <section id="vision-mission" class="bg-cream-100 text-sage-950 py-20 sm:py-28 px-4 sm:px-8 border-b border-sage-900/10">
+    <div class="max-w-7xl mx-auto">
+      
+      <!-- Section Header -->
+      <div class="max-w-3xl mb-12 sm:mb-16">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="text-[11px] font-semibold uppercase tracking-[0.26em] text-sage-800">Guiding Purpose</span>
+          <span class="h-px w-12 bg-sage-800/40"></span>
+        </div>
+        <h2 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-normal text-sage-950 leading-[1.1]">
+          Our Vision &amp; Our Mission
+        </h2>
+        <p class="text-sage-900/80 text-sm sm:text-base font-light leading-relaxed mt-4">
+          Every timber beam, glass gable, and forested acre we steward is anchored by two enduring commitments: regenerative architecture and unhurried alpine hospitality.
+        </p>
+      </div>
+
+      <!-- Two-Column Side-by-Side Large Editorial Cards -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
+        
+        <!-- CARD 1: OUR VISION -->
+        <article class="group rounded-3xl bg-cream-50 text-sage-950 p-8 sm:p-11 lg:p-12 shadow-soft border border-sage-900/15 hover:border-sage-800/40 transition-all duration-500 hover:-translate-y-1.5 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between gap-4 mb-8">
+              <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-sage-950/10 text-sage-900">
+                <span class="w-1.5 h-1.5 rounded-full bg-sage-800"></span>
+                <span class="text-[11px] font-semibold uppercase tracking-[0.24em]">01 • Future Horizon</span>
+              </div>
+              <div class="w-13 h-13 p-3 rounded-2xl bg-sage-950 text-cream-100 flex items-center justify-center transition-transform duration-500 group-hover:scale-105 group-hover:rotate-3">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24">
+                  <circle cx="12" cy="12" r="9" />
+                  <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76" />
+                </svg>
+              </div>
+            </div>
+
+            <span class="text-xs font-semibold uppercase tracking-[0.22em] text-sage-700 block mb-2">Our Vision</span>
+            <h3 class="font-serif text-3xl sm:text-4xl lg:text-[2.7rem] font-medium text-sage-950 leading-[1.12] mb-5">
+              The World’s Most Trusted Regenerative Alpine Sanctuary Network by 2030
+            </h3>
+
+            <p class="text-sage-900/85 text-sm sm:text-base font-light leading-relaxed mb-8">
+              We envision a future where luxury mountain travel actively heals the ecosystems it inhabits—proving that intimate architectural beauty, off-grid clean energy, and wild watershed preservation can thrive side by side across every alpine range.
+            </p>
+          </div>
+
+          <!-- Two Structured Metric / Highlight Badges -->
+          <div class="pt-6 border-t border-sage-950/12 grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div class="rounded-2xl bg-cream-200/80 border border-sage-900/10 p-4">
+              <span class="text-[10px] font-semibold uppercase tracking-[0.2em] text-sage-700 block">Clean Micro-Grids</span>
+              <p class="font-serif text-xl sm:text-2xl font-semibold text-sage-950 mt-1">100% Net-Positive Energy</p>
+            </div>
+            <div class="rounded-2xl bg-cream-200/80 border border-sage-900/10 p-4">
+              <span class="text-[10px] font-semibold uppercase tracking-[0.2em] text-sage-700 block">Helical Foundations</span>
+              <p class="font-serif text-xl sm:text-2xl font-semibold text-sage-950 mt-1">Zero-Footprint Architecture</p>
+            </div>
+          </div>
+        </article>
+
+        <!-- CARD 2: OUR MISSION -->
+        <article class="group rounded-3xl bg-sage-900 text-cream-100 p-8 sm:p-11 lg:p-12 shadow-cream-glow border border-cream-100/20 hover:border-cream-100/45 transition-all duration-500 hover:-translate-y-1.5 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between gap-4 mb-8">
+              <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-cream-100/10 border border-cream-100/15 text-cream-200">
+                <span class="w-1.5 h-1.5 rounded-full bg-sage-500"></span>
+                <span class="text-[11px] font-semibold uppercase tracking-[0.24em]">02 • Daily Purpose</span>
+              </div>
+              <div class="w-13 h-13 p-3 rounded-2xl bg-cream-100 text-sage-950 flex items-center justify-center transition-transform duration-500 group-hover:scale-105 group-hover:-rotate-3">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.7" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M3 20h18L14.5 9.5l-3.5 5-2.5-3.5L3 20z" />
+                  <circle cx="17.5" cy="6.5" r="2" />
+                </svg>
+              </div>
+            </div>
+
+            <span class="text-xs font-semibold uppercase tracking-[0.22em] text-sage-400 block mb-2">Our Mission</span>
+            <h3 class="font-serif text-3xl sm:text-4xl lg:text-[2.7rem] font-normal text-cream-100 leading-[1.12] mb-5">
+              Crafting Soulful, Off-Grid Retreats in Untouched Wilderness
+            </h3>
+
+            <p class="text-cream-200/85 text-sm sm:text-base font-light leading-relaxed mb-8">
+              Our mission is to design, restore, and steward warm timber-and-glass retreats where modern luxury coexists peacefully with ancient forests—inviting travelers to slow down, gather around cedar hearths, and reconnect with nature.
+            </p>
+          </div>
+
+          <!-- Two Structured Badges -->
+          <div class="pt-6 border-t border-cream-100/15 grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div class="rounded-2xl bg-sage-950/75 border border-cream-100/15 p-4">
+              <span class="text-[10px] font-semibold uppercase tracking-[0.2em] text-sage-400 block">Regional Craft</span>
+              <p class="font-serif text-xl sm:text-2xl text-cream-100 mt-1">Locally Milled Timber</p>
+            </div>
+            <div class="rounded-2xl bg-sage-950/75 border border-cream-100/15 p-4">
+              <span class="text-[10px] font-semibold uppercase tracking-[0.2em] text-sage-400 block">Curated Care</span>
+              <p class="font-serif text-xl sm:text-2xl text-cream-100 mt-1">Tailored Alpine Stays</p>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 4. CORE PILLARS & HERITAGE CARDS (3-CARD GRID) ==================== -->
+  <section id="core-pillars" class="bg-sage-950 text-cream-100 py-20 sm:py-28 px-4 sm:px-8 relative overflow-hidden">
+    <div class="max-w-7xl mx-auto">
+      
+      <!-- Section Heading -->
+      <div class="max-w-3xl mb-14 sm:mb-16">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="text-[11px] font-semibold uppercase tracking-[0.26em] text-sage-400">Foundational Values</span>
+          <span class="h-px w-12 bg-sage-500/50"></span>
+        </div>
+        <h2 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-normal text-cream-100 leading-[1.1]">
+          Core Pillars &amp; Heritage
+        </h2>
+        <p class="text-cream-200/80 text-sm sm:text-base font-light leading-relaxed mt-4">
+          Three enduring principles guide every sanctuary we build, every forest ridge we protect, and every guest journey we curate. Click any pillar to inspect its architectural &amp; ecological blueprint.
+        </p>
+      </div>
+
+      <!-- 3-Card Alternating Cream & Sage Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-7 sm:gap-8">
+        
+        <!-- Card 1 (Warm Cream): Architectural Harmony -->
+        <div onclick="openPillarModal('architecture')" role="button" tabindex="0" class="group cursor-pointer rounded-3xl bg-cream-100 text-sage-950 p-8 sm:p-9 border border-cream-200 shadow-cream-glow transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl flex flex-col justify-between focus:outline-none focus:ring-2 focus:ring-cream-100">
+          <div>
+            <div class="flex items-center justify-between mb-7">
+              <span class="text-[11px] font-semibold uppercase tracking-[0.24em] text-sage-700">Pillar I</span>
+              <div class="w-12 h-12 rounded-2xl bg-sage-950 text-cream-100 flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.7" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                </svg>
+              </div>
+            </div>
+            <h3 class="font-serif text-2xl sm:text-3xl font-semibold text-sage-950 mb-4">
+              Architectural Harmony
+            </h3>
+            <p class="text-sm text-sage-900/85 font-light leading-relaxed mb-6">
+              Biophilic A-frame and glass sanctuaries built organically around existing pines and granite ridges—allowing natural light, cedar warmth, and mountain mist to shape every room.
+            </p>
+          </div>
+          <div class="pt-4 border-t border-sage-950/15 flex items-center justify-between text-xs font-semibold uppercase tracking-[0.18em] text-sage-800">
+            <span>Biophilic A-Frames</span>
+            <span class="inline-flex items-center gap-1 transition-transform duration-300 group-hover:translate-x-1.5">Explore →</span>
+          </div>
+        </div>
+
+        <!-- Card 2 (Deep Sage): Regenerative Stewardship -->
+        <div onclick="openPillarModal('stewardship')" role="button" tabindex="0" class="group cursor-pointer rounded-3xl bg-sage-900 text-cream-100 p-8 sm:p-9 border border-cream-100/20 hover:border-cream-100/50 shadow-cream-glow transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl flex flex-col justify-between focus:outline-none focus:ring-2 focus:ring-cream-100">
+          <div>
+            <div class="flex items-center justify-between mb-7">
+              <span class="text-[11px] font-semibold uppercase tracking-[0.24em] text-sage-400">Pillar II</span>
+              <div class="w-12 h-12 rounded-2xl bg-cream-100 text-sage-950 flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.7" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                </svg>
+              </div>
+            </div>
+            <h3 class="font-serif text-2xl sm:text-3xl font-normal text-cream-100 mb-4">
+              Regenerative Stewardship
+            </h3>
+            <p class="text-sm text-cream-200/85 font-light leading-relaxed mb-6">
+              Replanting 50 native alpine trees for every guest stay and actively preserving over 4,200+ acres of high-altitude watershed, wildlife corridors, and old-growth timberland.
+            </p>
+          </div>
+          <div class="pt-4 border-t border-cream-100/15 flex items-center justify-between text-xs font-semibold uppercase tracking-[0.18em] text-cream-200">
+            <span>4,200+ Acres Protected</span>
+            <span class="inline-flex items-center gap-1 transition-transform duration-300 group-hover:translate-x-1.5">Explore →</span>
+          </div>
+        </div>
+
+        <!-- Card 3 (Warm Cream): Bespoke Alpine Hospitality -->
+        <div onclick="openPillarModal('hospitality')" role="button" tabindex="0" class="group cursor-pointer rounded-3xl bg-cream-100 text-sage-950 p-8 sm:p-9 border border-cream-200 shadow-cream-glow transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl flex flex-col justify-between focus:outline-none focus:ring-2 focus:ring-cream-100">
+          <div>
+            <div class="flex items-center justify-between mb-7">
+              <span class="text-[11px] font-semibold uppercase tracking-[0.24em] text-sage-700">Pillar III</span>
+              <div class="w-12 h-12 rounded-2xl bg-sage-950 text-cream-100 flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.7" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+                </svg>
+              </div>
+            </div>
+            <h3 class="font-serif text-2xl sm:text-3xl font-semibold text-sage-950 mb-4">
+              Bespoke Alpine Hospitality
+            </h3>
+            <p class="text-sm text-sage-900/85 font-light leading-relaxed mb-6">
+              Private naturalist trail guides, locally foraged mountain dining, wood-fired cedar saunas, and unhurried dark-sky stargazing rituals tailored around your rhythm.
+            </p>
+          </div>
+          <div class="pt-4 border-t border-sage-950/15 flex items-center justify-between text-xs font-semibold uppercase tracking-[0.18em] text-sage-800">
+            <span>Tailored Mountain Rituals</span>
+            <span class="inline-flex items-center gap-1 transition-transform duration-300 group-hover:translate-x-1.5">Explore →</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 5. WHY GUESTS CHOOSE ALPINE ASCENTS (CREAM HIGHLIGHT CARD + IMAGE) ==================== -->
+  <section id="styles" class="bg-sage-900 text-cream-100 py-20 sm:py-28 px-4 sm:px-8 border-t border-cream-100/10">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+        
+        <!-- Left Warm Cream Highlight Card -->
+        <div class="lg:col-span-6 rounded-3xl bg-cream-100 text-sage-950 p-8 sm:p-12 shadow-cream-glow flex flex-col justify-between">
+          <div>
+            <span class="text-[11px] font-semibold uppercase tracking-[0.24em] text-sage-700 block mb-3">The Alpine Ascents Standard</span>
+            <h2 class="font-serif text-3xl sm:text-4xl lg:text-[2.85rem] font-medium text-sage-950 leading-[1.12] mb-8">
+              Why Guests Choose<br />Alpine Ascents
+            </h2>
+
+            <div class="space-y-5">
+              <!-- Row 1: Carefully Selected Homes -->
+              <div class="flex items-start gap-4 p-4 rounded-2xl bg-cream-200/70 border border-sage-950/10 transition hover:bg-cream-200">
+                <div class="w-11 h-11 rounded-2xl bg-sage-950 text-cream-100 flex items-center justify-center shrink-0 mt-0.5">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.7" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="font-serif text-xl sm:text-2xl font-semibold text-sage-950">Carefully Selected Homes</h3>
+                  <p class="text-xs sm:text-sm text-sage-900/85 leading-relaxed mt-1">
+                    Fewer than 4% of reviewed properties join our collection—each vetted for architectural soul, tactile natural materials, and effortless warmth.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Row 2: Unmatched Locations -->
+              <div class="flex items-start gap-4 p-4 rounded-2xl bg-cream-200/70 border border-sage-950/10 transition hover:bg-cream-200">
+                <div class="w-11 h-11 rounded-2xl bg-sage-950 text-cream-100 flex items-center justify-center shrink-0 mt-0.5">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.7" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="font-serif text-xl sm:text-2xl font-semibold text-sage-950">Unmatched Locations</h3>
+                  <p class="text-xs sm:text-sm text-sage-900/85 leading-relaxed mt-1">
+                    From secluded Nordic-style lakeside docks to high-altitude ridge cabins, our sanctuaries sit directly beside untouched forests and water.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Row 3: Personalized Experience -->
+              <div class="flex items-start gap-4 p-4 rounded-2xl bg-cream-200/70 border border-sage-950/10 transition hover:bg-cream-200">
+                <div class="w-11 h-11 rounded-2xl bg-sage-950 text-cream-100 flex items-center justify-center shrink-0 mt-0.5">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.7" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="font-serif text-xl sm:text-2xl font-semibold text-sage-950">Personalized Experience</h3>
+                  <p class="text-xs sm:text-sm text-sage-900/85 leading-relaxed mt-1">
+                    Our dedicated mountain hosts tailor every stay—from stocked organic pantries upon arrival to private guided backcountry trails.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Atmospheric Lakeside Cabin Showcase Card -->
+        <div class="lg:col-span-6 rounded-3xl overflow-hidden relative min-h-[460px] shadow-cream-glow border border-cream-100/15 group flex flex-col justify-between p-8 sm:p-11">
+          <img
+            src="https://images.unsplash.com/photo-1449158743715-0a90ebb6d2d8?auto=format&fit=crop&w=1400&q=85"
+            onerror="this.src='https://placehold.co/900x1000/2A3B32/F5EFE6?text=Nordic+Lakeside+Sanctuary'"
+            alt="Warm timber sanctuary overlooking alpine lake and evergreens"
+            class="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-sage-950/95 via-sage-950/35 to-sage-950/25"></div>
+
+          <!-- Top Pill -->
+          <div class="relative z-10 flex items-center justify-between gap-3">
+            <span class="px-4 py-1.5 rounded-full bg-sage-950/75 backdrop-blur-md border border-cream-100/20 text-[11px] font-medium uppercase tracking-[0.22em] text-cream-100">
+              Signature Collection • 4 Regions
+            </span>
+            <span class="px-3.5 py-1.5 rounded-full bg-cream-100/90 text-sage-950 text-xs font-semibold">
+              ★ 4.96 Verified
+            </span>
+          </div>
+
+          <!-- Bottom Content & CTA Button -->
+          <div class="relative z-10">
+            <p class="text-xs uppercase tracking-[0.24em] text-cream-200/85 mb-2">Dolomites • Swiss Alps • Cascades • Fjords</p>
+            <h3 class="font-serif text-3xl sm:text-4xl text-cream-100 leading-tight mb-4">
+              Designed for Stillness Above the Timberline
+            </h3>
+            <p class="text-sm text-cream-200/85 font-light leading-relaxed mb-6 max-w-md">
+              Explore our curated portfolio of A-frame ridge cabins, glass fjord pavilions, and cedar forest lodges—each crafted for complete off-grid tranquility.
+            </p>
+            <div class="flex flex-wrap items-center gap-3">
+              <button type="button" onclick="openCollectionModal()" class="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-full bg-cream-100 text-sage-950 text-sm font-medium hover:bg-cream-200 transition shadow-lg active:scale-95 cursor-pointer">
+                <span>Browse Cabin Styles</span>
+                <span aria-hidden="true">→</span>
+              </button>
+              <button type="button" onclick="openBookingModal('Larchwood Glass A-Frame')" class="inline-flex items-center gap-2 px-5 py-3.5 rounded-full bg-sage-950/70 backdrop-blur-md border border-cream-100/30 text-cream-100 text-sm hover:bg-sage-900 transition active:scale-95 cursor-pointer">
+                <span>Reserve a Stay ↗</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 6. INTERACTIVE OUR HISTORY TIMELINE SECTION ==================== -->
+  <section id="history" class="bg-cream-100 text-sage-950 py-20 sm:py-28 px-4 sm:px-8 border-t border-sage-900/10">
+    <div class="max-w-7xl mx-auto">
+      
+      <!-- Header + Prev/Next Controls -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+        <div class="max-w-2xl">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="text-[11px] font-semibold uppercase tracking-[0.26em] text-sage-800">14 Years of Craft</span>
+            <span class="h-px w-12 bg-sage-800/40"></span>
+          </div>
+          <h2 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-normal text-sage-950 leading-[1.1]">
+            Our Alpine Heritage &amp; Milestones
+          </h2>
+        </div>
+
+        <!-- Prev / Next Milestone Buttons -->
+        <div class="flex items-center gap-3">
+          <button type="button" id="timeline-prev" onclick="stepTimeline(-1)" aria-label="Previous milestone" class="w-12 h-12 rounded-full border border-sage-900/25 bg-cream-50 text-sage-950 hover:bg-sage-950 hover:text-cream-100 flex items-center justify-center transition active:scale-95 cursor-pointer">
+            ←
+          </button>
+          <button type="button" id="timeline-next" onclick="stepTimeline(1)" aria-label="Next milestone" class="w-12 h-12 rounded-full border border-sage-900/25 bg-cream-50 text-sage-950 hover:bg-sage-950 hover:text-cream-100 flex items-center justify-center transition active:scale-95 cursor-pointer">
+            →
+          </button>
+        </div>
+      </div>
+
+      <!-- Interactive Year Selector Tabs -->
+      <div class="flex items-center gap-3 overflow-x-auto no-scrollbar pb-4 mb-8 border-b border-sage-900/15" role="tablist" aria-label="Alpine Ascents History Timeline">
+        <button type="button" onclick="selectTimeline(0)" data-year-idx="0" class="timeline-tab shrink-0 px-6 py-3 rounded-full text-sm font-medium transition-all cursor-pointer bg-sage-950 text-cream-100 shadow-md">
+          2012 • The First Timber Ridge
+        </button>
+        <button type="button" onclick="selectTimeline(1)" data-year-idx="1" class="timeline-tab shrink-0 px-6 py-3 rounded-full text-sm font-medium transition-all cursor-pointer bg-cream-200/70 text-sage-900 hover:bg-cream-200">
+          2016 • Nordic Fjord Expansion
+        </button>
+        <button type="button" onclick="selectTimeline(2)" data-year-idx="2" class="timeline-tab shrink-0 px-6 py-3 rounded-full text-sm font-medium transition-all cursor-pointer bg-cream-200/70 text-sage-900 hover:bg-cream-200">
+          2020 • 100% Off-Grid Micro-Grids
+        </button>
+        <button type="button" onclick="selectTimeline(3)" data-year-idx="3" class="timeline-tab shrink-0 px-6 py-3 rounded-full text-sm font-medium transition-all cursor-pointer bg-cream-200/70 text-sage-900 hover:bg-cream-200">
+          2024 • 4,200-Acre Forest Trust
+        </button>
+        <button type="button" onclick="selectTimeline(4)" data-year-idx="4" class="timeline-tab shrink-0 px-6 py-3 rounded-full text-sm font-medium transition-all cursor-pointer bg-cream-200/70 text-sage-900 hover:bg-cream-200">
+          2026 • 120+ Sanctuaries Worldwide
+        </button>
+      </div>
+
+      <!-- Dynamic Timeline Display Card -->
+      <div id="timeline-display" class="timeline-content-fade rounded-3xl bg-cream-50 border border-sage-900/15 shadow-soft overflow-hidden grid grid-cols-1 lg:grid-cols-12">
+        <!-- Left Photo -->
+        <div class="lg:col-span-6 relative min-h-[300px] sm:min-h-[400px]">
+          <img
+            id="timeline-img"
+            src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1400&q=85"
+            onerror="this.src='https://placehold.co/900x700/2A3B32/F5EFE6?text=2012+First+Cabin'"
+            alt="Alpine Ascents Milestone"
+            class="w-full h-full object-cover"
+          />
+          <div class="absolute top-5 left-5 px-4 py-1.5 rounded-full bg-sage-950/85 backdrop-blur-md text-cream-100 text-xs font-semibold tracking-[0.2em] uppercase" id="timeline-badge">
+            Chapter 01 / 05
+          </div>
+        </div>
+
+        <!-- Right Narrative -->
+        <div class="lg:col-span-6 p-8 sm:p-12 flex flex-col justify-between">
+          <div>
+            <span id="timeline-year-label" class="font-serif text-5xl sm:text-6xl font-semibold text-sage-800 block mb-2">2012</span>
+            <h3 id="timeline-title" class="font-serif text-3xl sm:text-4xl font-medium text-sage-950 leading-tight mb-4">
+              A Single Hand-Milled Cedar Cabin in the Swiss Bernese Oberland
+            </h3>
+            <p id="timeline-desc" class="text-sage-900/85 text-sm sm:text-base font-light leading-relaxed mb-8">
+              Founded by architect Elena Lindqvist and mountain guide Lukas Meyer, Alpine Ascents began by restoring an abandoned 19th-century timber herder’s refuge using salvaged larch wood, triple-glazed passive glass, and zero concrete foundations.
+            </p>
+          </div>
+
+          <div class="pt-6 border-t border-sage-950/12 flex flex-wrap items-center justify-between gap-4">
+            <div>
+              <span class="text-[10px] font-semibold uppercase tracking-[0.2em] text-sage-700 block">Key Milestone</span>
+              <p id="timeline-stat" class="font-serif text-2xl font-semibold text-sage-950 mt-0.5">1 Sanctuary • 1,840m Elevation</p>
+            </div>
+            <button type="button" onclick="openBookingModal()" class="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-sage-950 text-cream-100 text-xs sm:text-sm font-medium hover:bg-sage-800 transition active:scale-95 cursor-pointer">
+              <span>Experience Our Legacy ↗</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== 7. TECHNIQUES, EQUIPMENT & GALLERY SHOWCASE STRIP ==================== -->
+  <section id="techniques" class="bg-sage-950 text-cream-100 py-20 sm:py-24 px-4 sm:px-8 border-t border-cream-100/10">
+    <div class="max-w-7xl mx-auto">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+        <div>
+          <span class="text-[11px] font-semibold uppercase tracking-[0.26em] text-sage-400 block mb-3">Craft &amp; Expedition Readiness</span>
+          <h2 class="font-serif text-4xl sm:text-5xl font-normal text-cream-100">
+            Techniques, Equipment &amp; Field Gallery
+          </h2>
+        </div>
+        <button type="button" onclick="openGalleryModal()" class="self-start md:self-auto inline-flex items-center gap-2.5 px-6 py-3 rounded-full border border-cream-100/35 text-cream-100 text-sm hover:bg-cream-100 hover:text-sage-950 transition active:scale-95 cursor-pointer">
+          <span>Open Full Sanctuary Gallery</span>
+          <span>↗</span>
+        </button>
+      </div>
+
+      <!-- 3 Interactive Visual Cards -->
+      <div id="gallery" class="grid grid-cols-1 md:grid-cols-3 gap-7">
+        <!-- Item 1 -->
+        <div onclick="openGalleryModal(0)" role="button" tabindex="0" class="group cursor-pointer rounded-3xl bg-sage-900 border border-cream-100/15 overflow-hidden hover:border-cream-100/40 transition-all duration-300">
+          <div class="h-60 overflow-hidden relative">
+            <img src="https://images.unsplash.com/photo-1518732714860-b62714ce0c59?auto=format&fit=crop&w=900&q=80" onerror="this.src='https://placehold.co/800x600/2A3B32/F5EFE6?text=Helical+Timber+Joinery'" alt="Precision timber joinery" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+            <span class="absolute bottom-3 left-3 px-3 py-1 rounded-full bg-sage-950/80 text-cream-100 text-[11px] uppercase tracking-wider">Building Technique</span>
+          </div>
+          <div class="p-6">
+            <h3 class="font-serif text-2xl text-cream-100 mb-2">Helical Pier &amp; Cross-Laminated Timber</h3>
+            <p class="text-xs sm:text-sm text-cream-200/80 font-light leading-relaxed mb-4">
+              Zero-excavation steel micro-piles elevate each cabin above fragile alpine moss and tree roots while withstanding 160 km/h ridge winds.
+            </p>
+            <span class="text-xs font-medium text-sage-400 group-hover:text-cream-100 transition">View Technical Spec →</span>
+          </div>
+        </div>
+
+        <!-- Item 2 -->
+        <div onclick="openGalleryModal(1)" role="button" tabindex="0" class="group cursor-pointer rounded-3xl bg-sage-900 border border-cream-100/15 overflow-hidden hover:border-cream-100/40 transition-all duration-300">
+          <div class="h-60 overflow-hidden relative">
+            <img src="https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&w=900&q=80" onerror="this.src='https://placehold.co/800x600/2A3B32/F5EFE6?text=Alpine+Trail+Gear'" alt="Alpine trekking equipment" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+            <span class="absolute bottom-3 left-3 px-3 py-1 rounded-full bg-sage-950/80 text-cream-100 text-[11px] uppercase tracking-wider">Guest Equipment</span>
+          </div>
+          <div class="p-6">
+            <h3 class="font-serif text-2xl text-cream-100 mb-2">Complimentary Backcountry Outfitting</h3>
+            <p class="text-xs sm:text-sm text-cream-200/80 font-light leading-relaxed mb-4">
+              Every mudroom is stocked with handcrafted ash snowshoes, Leica binoculars, storm-grade packs, and satellite emergency beacons.
+            </p>
+            <span class="text-xs font-medium text-sage-400 group-hover:text-cream-100 transition">Inspect Gear List →</span>
+          </div>
+        </div>
+
+        <!-- Item 3 -->
+        <div onclick="openGalleryModal(2)" role="button" tabindex="0" class="group cursor-pointer rounded-3xl bg-sage-900 border border-cream-100/15 overflow-hidden hover:border-cream-100/40 transition-all duration-300">
+          <div class="h-60 overflow-hidden relative">
+            <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=900&q=80" onerror="this.src='https://placehold.co/800x600/2A3B32/F5EFE6?text=Sanctuary+Gallery'" alt="Misty alpine valley view" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+            <span class="absolute bottom-3 left-3 px-3 py-1 rounded-full bg-sage-950/80 text-cream-100 text-[11px] uppercase tracking-wider">Sanctuary Gallery</span>
+          </div>
+          <div class="p-6">
+            <h3 class="font-serif text-2xl text-cream-100 mb-2">Four Seasons Across the High Peaks</h3>
+            <p class="text-xs sm:text-sm text-cream-200/80 font-light leading-relaxed mb-4">
+              From golden larch autumns in the Dolomites to aurora-lit winter nights in Tromsø, explore high-resolution photography from our retreats.
+            </p>
+            <span class="text-xs font-medium text-sage-400 group-hover:text-cream-100 transition">Launch Lightbox →</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 8. CLOSING CTA & EDITORIAL FOOTER ==================== -->
+  <footer class="bg-cream-100 text-sage-950 pt-20 pb-12 px-4 sm:px-8 border-t border-sage-900/15">
+    <div class="max-w-7xl mx-auto">
+      
+      <!-- Warm Sage Banner Card -->
+      <div class="rounded-3xl bg-sage-900 text-cream-100 p-8 sm:p-14 mb-16 relative overflow-hidden shadow-cream-glow flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8">
+        <div class="max-w-2xl relative z-10">
+          <span class="text-[11px] font-semibold uppercase tracking-[0.26em] text-sage-400 block mb-3">Begin Your Ascent</span>
+          <h2 class="font-serif text-4xl sm:text-5xl font-normal text-cream-100 leading-[1.1] mb-4">
+            Ready to Step Into Stillness?
+          </h2>
+          <p class="text-cream-200/85 text-sm sm:text-base font-light leading-relaxed">
+            Speak with our alpine travel concierges to tailor a private cabin retreat, seasonal foraging itinerary, or multi-peak expedition.
+          </p>
+        </div>
+
+        <div class="flex flex-wrap items-center gap-4 relative z-10 shrink-0">
+          <button type="button" onclick="openBookingModal()" class="inline-flex items-center gap-2.5 px-7 py-4 rounded-full bg-cream-100 text-sage-950 font-medium text-sm hover:bg-cream-200 transition shadow-lg active:scale-95 cursor-pointer">
+            <span>Plan Your Escape</span>
+            <span>↗</span>
+          </button>
+          <a href="#top" class="inline-flex items-center gap-2 px-6 py-4 rounded-full border border-cream-100/30 text-cream-100 text-sm hover:bg-cream-100/10 transition">
+            <span>Back to Top ↑</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Footer Bottom Columns -->
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-10 pb-12 border-b border-sage-900/15">
+        <div class="md:col-span-2">
+          <div class="flex items-center gap-3 mb-3">
+            <svg class="w-7 h-5 text-sage-950" viewBox="0 0 36 26" fill="currentColor" aria-hidden="true">
+              <circle cx="27.5" cy="5.5" r="3" />
+              <path d="M1.5 23.5L11.2 7.8C12.1 6.4 14.1 6.4 15 7.8L19.6 15.2L22.6 11.4C23.5 10.3 25.2 10.3 26.1 11.5L34.5 23.5C35.1 24.4 34.5 25.5 33.4 25.5H2.6C1.5 25.5 0.9 24.4 1.5 23.5Z" />
+            </svg>
+            <span class="font-sans text-lg font-semibold uppercase tracking-[0.26em] text-sage-950">ALPINE ASCENTS</span>
+          </div>
+          <p class="text-sm text-sage-900/75 font-light max-w-sm leading-relaxed">
+            Architectural timber-and-glass mountain retreats dedicated to regenerative stewardship and unhurried wilderness hospitality.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="text-xs font-semibold uppercase tracking-[0.2em] text-sage-950 mb-4">Navigation</h4>
+          <ul class="space-y-2.5 text-sm text-sage-900/80">
+            <li><a href="#top" class="hover:text-sage-950 transition">Home</a></li>
+            <li><a href="#vision-mission" class="hover:text-sage-950 transition">Vision &amp; Mission</a></li>
+            <li><a href="#core-pillars" class="hover:text-sage-950 transition">Core Pillars</a></li>
+            <li><a href="#history" class="hover:text-sage-950 transition">Our History</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-xs font-semibold uppercase tracking-[0.2em] text-sage-950 mb-4">Sanctuary Concierge</h4>
+          <ul class="space-y-2.5 text-sm text-sage-900/80">
+            <li><button type="button" onclick="openBookingModal()" class="hover:text-sage-950 transition cursor-pointer">Reserve a Cabin</button></li>
+            <li><button type="button" onclick="openCollectionModal()" class="hover:text-sage-950 transition cursor-pointer">Explore Cabin Styles</button></li>
+            <li><button type="button" onclick="openGalleryModal()" class="hover:text-sage-950 transition cursor-pointer">Photography Gallery</button></li>
+            <li class="text-sage-700 text-xs pt-1">concierge@alpineascents.example</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-sage-800">
+        <p>© 2026 Alpine Ascents Mountain Escapes. All rights reserved.</p>
+        <p>100% Net-Positive Solar &amp; Micro-Hydro Sanctuaries</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==================== INTERACTIVE MODAL 1: PLAN YOUR ESCAPE (BOOKING) ==================== -->
+  <div id="booking-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-sage-950/80 backdrop-blur-md" role="dialog" aria-modal="true" aria-labelledby="booking-modal-title">
+    <div class="modal-pop relative w-full max-w-xl rounded-3xl bg-cream-100 text-sage-950 p-7 sm:p-10 shadow-2xl border border-sage-900/20 max-h-[92vh] overflow-y-auto">
+      <button type="button" onclick="closeModal('booking-modal')" aria-label="Close modal" class="absolute top-6 right-6 w-10 h-10 rounded-full bg-cream-200 hover:bg-sage-950 hover:text-cream-100 flex items-center justify-center text-sage-950 transition cursor-pointer">
+        ✕
+      </button>
+
+      <div id="booking-form-container">
+        <span class="text-[11px] font-semibold uppercase tracking-[0.24em] text-sage-700 block mb-2">Private Sanctuary Concierge</span>
+        <h3 id="booking-modal-title" class="font-serif text-3xl sm:text-4xl font-medium text-sage-950 mb-2">Plan Your Alpine Escape</h3>
+        <p class="text-sm text-sage-900/80 font-light mb-6">Select your preferred sanctuary, dates, and retreat preferences. Our host team responds within 2 hours.</p>
+
+        <form onsubmit="submitBooking(event)" class="space-y-4">
+          <div>
+            <label for="sanctuary-select" class="block text-xs font-semibold uppercase tracking-wider text-sage-800 mb-1.5">Preferred Sanctuary</label>
+            <select id="sanctuary-select" class="w-full px-4 py-3 rounded-2xl bg-cream-50 border border-sage-900/20 text-sm text-sage-950 focus:outline-none focus:border-sage-800">
+              <option value="Larchwood Glass A-Frame (Swiss Alps)">Larchwood Glass A-Frame — Bernese Oberland, Switzerland</option>
+              <option value="Nordic Fjord Cedar Pavilion (Norway)">Nordic Fjord Cedar Pavilion — Aurlandsfjord, Norway</option>
+              <option value="Dolomites Sky-Ridge Lodge (Italy)">Dolomites Sky-Ridge Lodge — Val Gardena, Italy</option>
+              <option value="Cascade Timber Lakehouse (Pacific NW)">Cascade Timber Lakehouse — Washington, USA</option>
+            </select>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label for="checkin-date" class="block text-xs font-semibold uppercase tracking-wider text-sage-800 mb-1.5">Check-In Date</label>
+              <input type="date" id="checkin-date" required class="w-full px-4 py-3 rounded-2xl bg-cream-50 border border-sage-900/20 text-sm text-sage-950 focus:outline-none focus:border-sage-800" />
+            </div>
+            <div>
+              <label for="guest-count" class="block text-xs font-semibold uppercase tracking-wider text-sage-800 mb-1.5">Guests</label>
+              <select id="guest-count" class="w-full px-4 py-3 rounded-2xl bg-cream-50 border border-sage-900/20 text-sm text-sage-950 focus:outline-none focus:border-sage-800">
+                <option value="2 Guests (Couple Retreat)">2 Guests (Couple Retreat)</option>
+                <option value="4 Guests (Family / Friends)">4 Guests (Family / Friends)</option>
+                <option value="6 Guests (Full Ridge Lodge)">6 Guests (Full Ridge Lodge)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label for="guest-name" class="block text-xs font-semibold uppercase tracking-wider text-sage-800 mb-1.5">Full Name</label>
+              <input type="text" id="guest-name" required placeholder="Clara Vance" class="w-full px-4 py-3 rounded-2xl bg-cream-50 border border-sage-900/20 text-sm text-sage-950 focus:outline-none focus:border-sage-800" />
+            </div>
+            <div>
+              <label for="guest-email" class="block text-xs font-semibold uppercase tracking-wider text-sage-800 mb-1.5">Email Address</label>
+              <input type="email" id="guest-email" required placeholder="clara@example.com" class="w-full px-4 py-3 rounded-2xl bg-cream-50 border border-sage-900/20 text-sm text-sage-950 focus:outline-none focus:border-sage-800" />
+            </div>
+          </div>
+
+          <button type="submit" class="w-full mt-2 py-4 rounded-full bg-sage-950 text-cream-100 font-medium text-sm hover:bg-sage-800 transition shadow-lg active:scale-95 cursor-pointer">
+            Request Tailored Itinerary ↗
+          </button>
+        </form>
+      </div>
+
+      <!-- Confirmation State -->
+      <div id="booking-confirmation" class="hidden text-center py-6">
+        <div class="w-16 h-16 rounded-full bg-sage-950 text-cream-100 flex items-center justify-center mx-auto mb-5 text-2xl">✓</div>
+        <span class="text-xs font-semibold uppercase tracking-[0.24em] text-sage-700 block mb-2">Inquiry Received</span>
+        <h3 class="font-serif text-3xl sm:text-4xl text-sage-950 mb-3">Your Mountain Escape Awaits</h3>
+        <p id="booking-summary-text" class="text-sm text-sage-900/80 leading-relaxed max-w-md mx-auto mb-7"></p>
+        <button type="button" onclick="resetAndCloseBooking()" class="px-7 py-3.5 rounded-full bg-sage-950 text-cream-100 text-sm font-medium hover:bg-sage-800 transition cursor-pointer">
+          Return to Alpine Ascents
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== INTERACTIVE MODAL 2: CORE PILLAR & COLLECTION SPOTLIGHT ==================== -->
+  <div id="detail-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-sage-950/80 backdrop-blur-md" role="dialog" aria-modal="true" aria-labelledby="detail-modal-title">
+    <div class="modal-pop relative w-full max-w-2xl rounded-3xl bg-cream-100 text-sage-950 overflow-hidden shadow-2xl border border-sage-900/20 max-h-[90vh] overflow-y-auto">
+      <button type="button" onclick="closeModal('detail-modal')" aria-label="Close details" class="absolute top-5 right-5 z-20 w-10 h-10 rounded-full bg-sage-950/80 text-cream-100 hover:bg-sage-950 flex items-center justify-center transition cursor-pointer">
+        ✕
+      </button>
+
+      <div class="h-56 sm:h-64 relative">
+        <img id="detail-modal-img" src="" alt="" class="w-full h-full object-cover" />
+        <div class="absolute inset-0 bg-gradient-to-t from-sage-950/80 via-transparent to-transparent"></div>
+        <span id="detail-modal-tag" class="absolute bottom-4 left-6 px-3.5 py-1 rounded-full bg-cream-100 text-sage-950 text-[11px] font-semibold uppercase tracking-[0.2em]"></span>
+      </div>
+
+      <div class="p-7 sm:p-9">
+        <h3 id="detail-modal-title" class="font-serif text-3xl sm:text-4xl font-medium text-sage-950 mb-3"></h3>
+        <p id="detail-modal-body" class="text-sm sm:text-base text-sage-900/85 font-light leading-relaxed mb-6"></p>
+        <div id="detail-modal-highlights" class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-7"></div>
+        <div class="flex flex-wrap items-center justify-between gap-4 pt-5 border-t border-sage-900/15">
+          <button type="button" onclick="closeModal('detail-modal'); openBookingModal();" class="px-6 py-3 rounded-full bg-sage-950 text-cream-100 text-sm font-medium hover:bg-sage-800 transition cursor-pointer">
+            Plan a Stay Around This Pillar ↗
+          </button>
+          <button type="button" onclick="closeModal('detail-modal')" class="px-5 py-3 rounded-full border border-sage-900/25 text-sage-900 text-sm hover:bg-cream-200 transition cursor-pointer">
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== INTERACTIVE SCRIPT ==================== -->
+  <script>
+    // 1. Navbar Scroll Transition
+    const navbar = document.getElementById('navbar');
+    function updateNavbarOnScroll() {
+      if (window.scrollY > 40) {
+        navbar.classList.remove('bg-transparent', 'border-transparent');
+        navbar.classList.add('bg-sage-950/92', 'backdrop-blur-xl', 'border-cream-100/15', 'shadow-lg');
+      } else {
+        navbar.classList.add('bg-transparent', 'border-transparent');
+        navbar.classList.remove('bg-sage-950/92', 'backdrop-blur-xl', 'border-cream-100/15', 'shadow-lg');
+      }
+    }
+    window.addEventListener('scroll', updateNavbarOnScroll, { passive: true });
+    updateNavbarOnScroll();
+
+    // 2. Mobile Menu Toggle
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIconOpen = document.getElementById('menu-icon-open');
+    const menuIconClose = document.getElementById('menu-icon-close');
+
+    mobileMenuBtn.addEventListener('click', () => {
+      const isHidden = mobileMenu.classList.contains('hidden');
+      if (isHidden) {
+        mobileMenu.classList.remove('hidden');
+        menuIconOpen.classList.add('hidden');
+        menuIconClose.classList.remove('hidden');
+        mobileMenuBtn.setAttribute('aria-expanded', 'true');
+      } else {
+        closeMobileMenu();
+      }
+    });
+
+    function closeMobileMenu() {
+      mobileMenu.classList.add('hidden');
+      menuIconOpen.classList.remove('hidden');
+      menuIconClose.classList.add('hidden');
+      mobileMenuBtn.setAttribute('aria-expanded', 'false');
+    }
+
+    // 3. Smooth Navigation Link Handler
+    function handleNavClick(event, key) {
+      const targetMap = {
+        home: '#top',
+        about: '#vision-mission',
+        styles: '#styles',
+        techniques: '#techniques',
+        gallery: '#gallery'
+      };
+      const selector = targetMap[key];
+      if (selector) {
+        const el = document.querySelector(selector);
+        if (el) {
+          event.preventDefault();
+          el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }
+      // Update active indicator on desktop nav
+      document.querySelectorAll('.nav-link').forEach(link => {
+        if (link.dataset.nav === key) {
+          link.classList.add('font-medium', 'text-cream-100', 'border-b-[1.5px]', 'border-cream-100');
+          link.classList.remove('font-normal', 'text-cream-100/80');
+        } else {
+          link.classList.remove('font-medium', 'border-b-[1.5px]', 'border-cream-100');
+          link.classList.add('font-normal', 'text-cream-100/80');
+        }
+      });
+    }
+
+    // 4. Interactive History Timeline Data & Controls
+    const timelineMilestones = [
+      {
+        year: '2012',
+        badge: 'Chapter 01 / 05',
+        title: 'A Single Hand-Milled Cedar Cabin in the Swiss Bernese Oberland',
+        desc: 'Founded by architect Elena Lindqvist and mountain guide Lukas Meyer, Alpine Ascents began by restoring an abandoned 19th-century timber herder’s refuge using salvaged larch wood, triple-glazed passive glass, and zero concrete foundations.',
+        stat: '1 Sanctuary • 1,840m Elevation',
+        img: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1400&q=85'
+      },
+      {
+        year: '2016',
+        badge: 'Chapter 02 / 05',
+        title: 'Expanding to the Nordic Fjords & Dolomite Limestone Ridges',
+        desc: 'Following four years of sold-out winter seasons, we partnered with regional Scandinavian carpenters to debut cantilevered lakeside pavilions along Norway’s Aurlandsfjord and high-meadow A-frames in South Tyrol.',
+        stat: '24 Sanctuaries • 3 Alpine Countries',
+        img: 'https://images.unsplash.com/photo-1510798831971-661eb04b3739?auto=format&fit=crop&w=1400&q=85'
+      },
+      {
+        year: '2020',
+        badge: 'Chapter 03 / 05',
+        title: '100% Off-Grid Solar & Micro-Hydro Energy Independence',
+        desc: 'Every Alpine Ascents sanctuary achieved full energy autonomy through integrated slate-roof solar tiles, closed-loop greywater filtration, and micro-hydro mountain stream turbines—eliminating fossil fuel reliance across all properties.',
+        stat: '100% Net-Positive Off-Grid Power',
+        img: 'https://images.unsplash.com/photo-1449158743715-0a90ebb6d2d8?auto=format&fit=crop&w=1400&q=85'
+      },
+      {
+        year: '2024',
+        badge: 'Chapter 04 / 05',
+        title: 'Establishing the 4,200-Acre Alpine Watershed & Forest Trust',
+        desc: 'We formalized our 50-Trees-Per-Stay pledge into a permanent conservation land trust, protecting old-growth spruce corridors, glacial watersheds, and dark-sky reserves surrounding our sanctuaries.',
+        stat: '4,200+ Acres Permanently Protected',
+        img: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1400&q=85'
+      },
+      {
+        year: '2026',
+        badge: 'Chapter 05 / 05',
+        title: '120+ Architectural Sanctuaries & 25,000+ Returning Guests',
+        desc: 'Today, Alpine Ascents stewards over 120 low-impact retreats across Europe and North America, maintaining a 4.9-star guest rating while advancing regenerative mountain architecture for the decade ahead.',
+        stat: '120+ Sanctuaries • 25K+ Happy Guests',
+        img: 'https://images.unsplash.com/photo-1518732714860-b62714ce0c59?auto=format&fit=crop&w=1400&q=85'
+      }
+    ];
+
+    let currentTimelineIndex = 0;
+
+    function selectTimeline(index) {
+      currentTimelineIndex = index;
+      const item = timelineMilestones[index];
+      const display = document.getElementById('timeline-display');
+
+      // Re-trigger fade animation
+      display.classList.remove('timeline-content-fade');
+      void display.offsetWidth;
+      display.classList.add('timeline-content-fade');
+
+      document.getElementById('timeline-badge').textContent = item.badge;
+      document.getElementById('timeline-year-label').textContent = item.year;
+      document.getElementById('timeline-title').textContent = item.title;
+      document.getElementById('timeline-desc').textContent = item.desc;
+      document.getElementById('timeline-stat').textContent = item.stat;
+      document.getElementById('timeline-img').src = item.img;
+
+      // Update active tab styling
+      document.querySelectorAll('.timeline-tab').forEach((btn, idx) => {
+        if (idx === index) {
+          btn.classList.add('bg-sage-950', 'text-cream-100', 'shadow-md');
+          btn.classList.remove('bg-cream-200/70', 'text-sage-900', 'hover:bg-cream-200');
+        } else {
+          btn.classList.remove('bg-sage-950', 'text-cream-100', 'shadow-md');
+          btn.classList.add('bg-cream-200/70', 'text-sage-900', 'hover:bg-cream-200');
+        }
+      });
+    }
+
+    function stepTimeline(delta) {
+      const next = (currentTimelineIndex + delta + timelineMilestones.length) % timelineMilestones.length;
+      selectTimeline(next);
+    }
+
+    // 5. Pillar, Collection & Gallery Spotlight Modals
+    const detailData = {
+      architecture: {
+        tag: 'Pillar I • Architectural Harmony',
+        title: 'Biophilic Timber & Passive Alpine Glass',
+        img: 'https://images.unsplash.com/photo-1518732714860-b62714ce0c59?auto=format&fit=crop&w=1200&q=80',
+        body: 'Every Alpine Ascents sanctuary is engineered using locally felled, FSC-certified larch and cedar joined with traditional mortise-and-tenon craftsmanship. Helical steel piers anchor structures directly into bedrock without pouring a single yard of concrete.',
+        highlights: [
+          { label: 'Foundation Impact', value: 'Zero Concrete Helical Piers' },
+          { label: 'Thermal Envelope', value: 'Triple-Glazed Low-E Gable Glass' }
+        ]
+      },
+      stewardship: {
+        tag: 'Pillar II • Regenerative Stewardship',
+        title: '4,200+ Acres of Protected High-Altitude Forest',
+        img: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80',
+        body: 'For every night spent in our cabins, our forestry team plants 50 native alpine saplings and funds watershed restoration. Over 92% of every sanctuary parcel remains untouched wilderness.',
+        highlights: [
+          { label: 'Reforestation Pledge', value: '50 Native Trees Per Stay' },
+          { label: 'Energy Standard', value: '100% Solar & Micro-Hydro' }
+        ]
+      },
+      hospitality: {
+        tag: 'Pillar III • Bespoke Alpine Hospitality',
+        title: 'Unhurried Rituals & Private Naturalist Guides',
+        img: 'https://images.unsplash.com/photo-1449158743715-0a90ebb6d2d8?auto=format&fit=crop&w=1200&q=80',
+        body: 'Arrive to a crackling cedar hearth, locally baked sourdough, and organic mountain provisions. Your dedicated host arranges private ridge hikes, wood-fired lakeside saunas, and telescope stargazing.',
+        highlights: [
+          { label: 'Arrival Ritual', value: 'Stocked Organic Alpine Pantry' },
+          { label: 'Wellness & Trails', value: 'Private Cedar Sauna & Guides' }
+        ]
+      },
+      collection: {
+        tag: 'Signature Sanctuary Styles',
+        title: 'Four Distinct Architectural Typologies',
+        img: 'https://images.unsplash.com/photo-1510798831971-661eb04b3739?auto=format&fit=crop&w=1200&q=80',
+        body: 'Choose between our steep-pitched Larchwood A-Frames, cantilevered Fjord Glass Pavilions, Stone-and-Timber Dolomite Refuges, or Secluded Lakeside Cedar Docks.',
+        highlights: [
+          { label: 'A-Frame & Glass', value: 'Panoramic 270° Peak Views' },
+          { label: 'Lakeside & Fjord', value: 'Private Docks & Cedar Saunas' }
+        ]
+      },
+      gallery: {
+        tag: 'Sanctuary & Expedition Gallery',
+        title: 'Life Above the Timberline Across Four Seasons',
+        img: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&q=80',
+        body: 'From spring wildflower meadows and mirror-calm summer alpine lakes to golden larch autumns and deep-powder winter escapes, every season transforms our sanctuaries.',
+        highlights: [
+          { label: 'Dark-Sky Certified', value: 'Bortle Class 2 Stargazing' },
+          { label: 'Outfitted Gear', value: 'Snowshoes, Optics & Trail Maps' }
+        ]
+      }
+    };
+
+    function openPillarModal(key) {
+      const data = detailData[key] || detailData.architecture;
+      document.getElementById('detail-modal-tag').textContent = data.tag;
+      document.getElementById('detail-modal-title').textContent = data.title;
+      document.getElementById('detail-modal-img').src = data.img;
+      document.getElementById('detail-modal-body').textContent = data.body;
+
+      const highlightsEl = document.getElementById('detail-modal-highlights');
+      highlightsEl.innerHTML = data.highlights.map(h => `
+        <div class="rounded-2xl bg-cream-200/80 border border-sage-900/10 p-4">
+          <span class="text-[10px] font-semibold uppercase tracking-[0.2em] text-sage-700 block">${h.label}</span>
+          <p class="font-serif text-xl font-semibold text-sage-950 mt-1">${h.value}</p>
+        </div>
+      `).join('');
+
+      openModal('detail-modal');
+    }
+
+    function openCollectionModal() {
+      openPillarModal('collection');
+    }
+
+    function openGalleryModal() {
+      openPillarModal('gallery');
+    }
+
+    // 6. Booking Modal Controls
+    function openBookingModal(preselectedSanctuary) {
+      if (preselectedSanctuary) {
+        const select = document.getElementById('sanctuary-select');
+        for (let i = 0; i < select.options.length; i++) {
+          if (select.options[i].value.includes(preselectedSanctuary)) {
+            select.selectedIndex = i;
+            break;
+          }
+        }
+      }
+      // Set default date to 14 days from today if empty
+      const dateInput = document.getElementById('checkin-date');
+      if (!dateInput.value) {
+        const future = new Date();
+        future.setDate(future.getDate() + 14);
+        dateInput.value = future.toISOString().split('T')[0];
+      }
+      openModal('booking-modal');
+    }
+
+    function submitBooking(event) {
+      event.preventDefault();
+      const sanctuary = document.getElementById('sanctuary-select').value;
+      const date = document.getElementById('checkin-date').value;
+      const guests = document.getElementById('guest-count').value;
+      const name = document.getElementById('guest-name').value;
+
+      document.getElementById('booking-summary-text').textContent =
+        `Thank you, ${name}. Our mountain concierge is preparing a bespoke itinerary for ${guests} at ${sanctuary} arriving ${date}.`;
+
+      document.getElementById('booking-form-container').classList.add('hidden');
+      document.getElementById('booking-confirmation').classList.remove('hidden');
+    }
+
+    function resetAndCloseBooking() {
+      closeModal('booking-modal');
+      setTimeout(() => {
+        document.getElementById('booking-form-container').classList.remove('hidden');
+        document.getElementById('booking-confirmation').classList.add('hidden');
+      }, 250);
+    }
+
+    // 7. Generic Modal Helpers (Backdrop click + Escape key)
+    function openModal(id) {
+      const modal = document.getElementById(id);
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal(id) {
+      const modal = document.getElementById(id);
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+      document.body.style.overflow = '';
+    }
+
+    ['booking-modal', 'detail-modal'].forEach(id => {
+      document.getElementById(id).addEventListener('click', (e) => {
+        if (e.target.id === id) closeModal(id);
+      });
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeModal('booking-modal');
+        closeModal('detail-modal');
+        closeMobileMenu();
+      }
+    });
+  </script>
+</body>
+</html>
