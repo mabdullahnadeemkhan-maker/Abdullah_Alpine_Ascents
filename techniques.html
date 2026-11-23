@@ -1,0 +1,1044 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Alpine Ascents | Mountain Escapes | Techniques & Equipment</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+
+/* BASIC SETTINGS */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --sage: #879b7e;
+    --dark: #40583f;
+    --deep: #293e30;
+    --light: #c4d0b9;
+    --cream: #f5f1e6;
+    --text: #354735;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: var(--cream);
+    color: var(--text);
+}
+
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+/* CUSTOM MOUNTAIN & SUN ICON */
+
+.brand-icon {
+    width: 24px;
+    height: 24px;
+    vertical-align: middle;
+    display: inline-block;
+    flex-shrink: 0;
+}
+
+.label-icon {
+    width: 16px;
+    height: 16px;
+    vertical-align: -2px;
+    display: inline-block;
+    margin-right: 6px;
+}
+
+/* HEADER */
+
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 8%;
+    background: transparent;
+}
+
+.logo {
+    color: white;
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: 5px;
+    line-height: 1.2;
+    white-space: nowrap;
+}
+
+.logo-top {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo span {
+    display: block;
+    font-size: 9px;
+    text-align: center;
+    letter-spacing: 5px;
+    margin-top: 4px;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 27px;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    font-size: 11px;
+    font-weight: 400;
+    padding-bottom: 9px;
+    transition: .3s;
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+nav a:hover,
+nav a.active {
+    color: #dce8d3;
+    border-bottom: 1px solid #dce8d3;
+}
+
+.plan-btn {
+    text-decoration: none;
+    color: white;
+    border: 1px solid white;
+    padding: 13px 22px;
+    border-radius: 30px;
+    font-size: 10px;
+    white-space: nowrap;
+    transition: .3s;
+    background: transparent;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+}
+
+.plan-btn:hover {
+    background: var(--sage);
+    border-color: var(--sage);
+}
+
+/* HERO SECTION */
+
+.hero {
+    min-height: 590px;
+    background:
+    linear-gradient(
+        90deg,
+        rgba(41, 62, 48, .85),
+        rgba(41, 62, 48, .18)
+    ),
+    url('https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=2000&q=90');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    padding: 140px 9% 65px;
+    color: white;
+}
+
+.hero-content {
+    max-width: 720px;
+}
+
+.hero-label {
+    color: #dce8d3;
+    letter-spacing: 5px;
+    font-size: 11px;
+}
+
+.hero h1 {
+    font-size: clamp(48px, 6vw, 75px);
+    font-weight: 400;
+    line-height: 1.08;
+    margin: 20px 0;
+}
+
+.hero p {
+    font-size: 14px;
+    line-height: 2;
+    max-width: 510px;
+    margin-bottom: 30px;
+}
+
+.hero-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 15px;
+    text-decoration: none;
+    color: white;
+    font-size: 11px;
+    letter-spacing: 2px;
+}
+
+.arrow-circle {
+    width: 42px;
+    height: 42px;
+    border: 1px solid white;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    transition: .3s;
+}
+
+.hero-btn:hover .arrow-circle {
+    background: var(--sage);
+    transform: translateY(4px);
+}
+
+/* COMMON */
+
+.section-label {
+    color: var(--dark);
+    font-size: 11px;
+    letter-spacing: 4px;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+}
+
+/* TECHNIQUES SECTION */
+
+.techniques {
+    background: #e9eddf;
+    padding: 80px 6%;
+    display: grid;
+    grid-template-columns: 1.2fr repeat(3, 1fr);
+    align-items: center;
+    gap: 22px;
+}
+
+.tech-intro h2 {
+    font-size: 35px;
+    line-height: 1.2;
+    margin: 17px 0;
+    color: var(--dark);
+}
+
+.tech-intro p {
+    font-size: 13px;
+    line-height: 1.9;
+    color: #536650;
+    margin-bottom: 25px;
+}
+
+.green-btn {
+    display: inline-block;
+    background: var(--dark);
+    color: white;
+    text-decoration: none;
+    padding: 13px 24px;
+    border-radius: 30px;
+    font-size: 11px;
+    transition: .3s;
+    border: none;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+}
+
+.green-btn:hover {
+    background: var(--deep);
+    transform: translateY(-3px);
+}
+
+/* TECH CARDS */
+
+.tech-card {
+    background: var(--cream);
+    border: 1px solid #a8b99c;
+    border-radius: 14px;
+    overflow: hidden;
+    text-align: center;
+    transition: .4s;
+    cursor: pointer;
+}
+
+.tech-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px #263b2b25;
+}
+
+.tech-card img {
+    width: 100%;
+    height: 170px;
+    object-fit: cover;
+}
+
+.tech-content {
+    padding: 17px 12px;
+}
+
+.tech-icon {
+    width: 47px;
+    height: 47px;
+    background: var(--dark);
+    color: white;
+    border: 4px solid var(--cream);
+    border-radius: 50%;
+    margin: -42px auto 12px;
+    position: relative;
+    display: grid;
+    place-items: center;
+    font-size: 20px;
+}
+
+.tech-card h3 {
+    font-size: 19px;
+    margin-bottom: 8px;
+}
+
+.tech-card p {
+    color: #536650;
+    font-size: 11px;
+    line-height: 1.8;
+}
+
+/* EQUIPMENT SECTION */
+
+.equipment {
+    background: var(--sage);
+    padding: 75px 8%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.equipment-img img {
+    width: 100%;
+    height: 340px;
+    object-fit: cover;
+    border-radius: 16px;
+    border: 2px solid #e9eddf;
+}
+
+.equipment-info .section-label {
+    color: #f5f1e6;
+}
+
+.equipment-info h2 {
+    font-size: 38px;
+    line-height: 1.2;
+    margin: 16px 0;
+    color: white;
+}
+
+.equipment-info p {
+    font-size: 14px;
+    line-height: 1.9;
+    color: #f5f1e6;
+    margin-bottom: 25px;
+}
+
+/* EXPERT TIPS */
+
+.tips {
+    background: #e9eddf;
+    padding: 80px 6%;
+    display: grid;
+    grid-template-columns: 1.2fr repeat(3, 1fr);
+    align-items: center;
+    gap: 22px;
+}
+
+.tips-intro .section-label {
+    color: var(--dark);
+}
+
+.tips-intro h2 {
+    font-size: 34px;
+    color: var(--dark);
+    line-height: 1.2;
+    margin: 17px 0;
+}
+
+.tips-intro p {
+    color: #536650;
+    font-size: 12px;
+    line-height: 1.9;
+    margin-bottom: 24px;
+}
+
+/* TIP CARDS */
+
+.tip-card {
+    background: var(--cream);
+    border: 1px solid #a8b99c;
+    border-radius: 14px;
+    overflow: hidden;
+    text-align: center;
+    transition: .3s;
+    cursor: pointer;
+}
+
+.tip-card:hover {
+    transform: translateY(-7px);
+}
+
+.tip-card img {
+    width: 100%;
+    height: 145px;
+    object-fit: cover;
+}
+
+.tip-content {
+    padding: 17px 12px;
+}
+
+.tip-content h3 {
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+.tip-content p {
+    font-size: 11px;
+    color: #536650;
+    line-height: 1.8;
+}
+
+/* CALL TO ACTION */
+
+.cta {
+    margin: 35px 5%;
+    min-height: 210px;
+    background:
+    linear-gradient(
+        90deg,
+        rgba(41, 62, 48, .88),
+        rgba(41, 62, 48, .25)
+    ),
+    url('https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&fit=crop&w=1600&q=85');
+    background-size: cover;
+    background-position: center;
+    border-radius: 17px;
+    padding: 40px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    color: white;
+}
+
+.cta h2 {
+    font-size: 39px;
+    margin-bottom: 12px;
+}
+
+.cta p {
+    font-size: 13px;
+    font-style: italic;
+}
+
+.cta .green-btn {
+    background: var(--cream);
+    color: var(--dark);
+}
+
+.cta .green-btn:hover {
+    background: var(--light);
+}
+
+/* FOOTER */
+
+footer {
+    background: var(--deep);
+    color: var(--cream);
+    padding: 45px 6% 20px;
+}
+
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 25px;
+    padding-bottom: 28px;
+}
+
+.footer-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 27px;
+    letter-spacing: 4px;
+}
+
+.footer-logo-top {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer-logo span {
+    display: block;
+    font-family: Poppins;
+    font-size: 9px;
+    letter-spacing: 5px;
+    margin-top: 4px;
+}
+
+.footer-links {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.footer-links a {
+    color: var(--cream);
+    text-decoration: none;
+    font-size: 11px;
+    transition: .3s;
+}
+
+.footer-links a:hover {
+    color: var(--light);
+}
+
+.social {
+    display: flex;
+    gap: 12px;
+}
+
+.social a {
+    width: 34px;
+    height: 34px;
+    background: var(--cream);
+    color: var(--dark);
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    text-decoration: none;
+    font-size: 13px;
+    transition: .3s;
+}
+
+.social a:hover {
+    background: var(--sage);
+    color: white;
+}
+
+.footer-bottom {
+    border-top: 1px solid #82977e;
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 15px;
+    color: #e2eadc;
+    font-size: 11px;
+}
+
+/* MODAL POPUP STYLES */
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(41, 62, 48, 0.8);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    padding: 20px;
+}
+
+.modal-overlay.active {
+    display: flex;
+}
+
+.modal-box {
+    background: var(--cream);
+    color: var(--text);
+    max-width: 500px;
+    width: 100%;
+    border-radius: 16px;
+    padding: 35px;
+    position: relative;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-15px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.close-modal {
+    position: absolute;
+    top: 18px;
+    right: 22px;
+    font-size: 24px;
+    cursor: pointer;
+    color: var(--dark);
+    background: none;
+    border: none;
+}
+
+.modal-box h3 {
+    font-size: 26px;
+    color: var(--dark);
+    margin-bottom: 12px;
+}
+
+.modal-box p {
+    font-size: 13px;
+    line-height: 1.8;
+    margin-bottom: 18px;
+}
+
+.modal-form input,
+.modal-form select,
+.modal-form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 14px;
+    border: 1px solid #a8b99c;
+    border-radius: 8px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 12px;
+    background: white;
+}
+
+.modal-list {
+    margin-left: 18px;
+    font-size: 13px;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+/* TABLET RESPONSIVE */
+
+@media(max-width: 1050px) {
+    header { padding: 22px 4%; }
+    nav { gap: 13px; }
+    .techniques, .tips { grid-template-columns: repeat(2, 1fr); }
+    .equipment { grid-template-columns: 1fr 1fr; }
+}
+
+/* MOBILE RESPONSIVE */
+
+@media(max-width: 650px) {
+    header { padding: 18px 5%; flex-wrap: wrap; gap: 17px; }
+    .logo { font-size: 20px; }
+    nav { width: 100%; gap: 12px; flex-wrap: wrap; }
+    nav a { font-size: 10px; }
+    .plan-btn { padding: 9px 16px; font-size: 9px; }
+    .hero { min-height: 550px; padding: 180px 6% 60px; background-position: center; }
+    .hero h1 { font-size: 43px; }
+    .hero p { font-size: 12px; }
+    .techniques, .tips { grid-template-columns: 1fr; padding: 50px 6%; }
+    .tech-intro h2, .tips-intro h2 { font-size: 30px; }
+    .tech-card img { height: 210px; }
+    .equipment { grid-template-columns: 1fr; padding: 50px 6%; gap: 25px; }
+    .equipment-img img { height: 240px; }
+    .cta { flex-direction: column; align-items: flex-start; padding: 30px; }
+    .cta h2 { font-size: 29px; }
+    .footer-top, .footer-bottom { flex-direction: column; align-items: flex-start; }
+}
+/* CUSTOM MOUNTAIN & SUN ICON */
+
+.brand-icon {
+    width: 34px;
+    height: 34px;
+    vertical-align: middle;
+    display: inline-block;
+    flex-shrink: 0;
+}
+
+.label-icon {
+    width: 22px;
+    height: 22px;
+    vertical-align: -4px;
+    display: inline-block;
+    margin-right: 8px;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- Reusable SVG Definition for Mountain & Sun Icon -->
+<svg style="display: none;">
+    <symbol id="mountain-sun-icon" viewBox="0 0 64 64">
+        <circle cx="48" cy="18" r="7" fill="currentColor"/>
+        <path d="M8 52 C6 52 5 50 6.5 48 L21 22 C22.5 19.5 25.5 19.5 27 22 L34 34 L39 27 C40.5 25 43.5 25 45 27 L57.5 48 C59 50 58 52 56 52 Z" fill="currentColor"/>
+    </symbol>
+</svg>
+
+<!-- HEADER -->
+<header id="home">
+    <div class="logo">
+        <div class="logo-top">
+            <svg class="brand-icon" aria-hidden="true"><use href="#mountain-sun-icon"></use></svg>
+            Alpine Ascents
+        </div>
+        <span><small>MOUNTAIN ESCAPES</small></span>
+    </div>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="aboutus.html">About Us</a>
+        <a href="typeand style.html">Type and Style</a>
+        <a href="technique.html">Techniques & equipment</a>
+        <a href="gallery.html">Gallery</a>
+    </nav>
+
+    <button class="plan-btn" onclick="openPlanModal()">
+        Plan Your Escape ↗
+    </button>
+</header>
+
+<!-- HERO SECTION -->
+<section class="hero">
+    <div class="hero-content">
+        <span class="hero-label">EXPLORE THE MOUNTAINS</span>
+        <h1>
+            Master the Skills.<br>
+            Gear Up for Adventure.
+        </h1>
+        <p>
+            Discover essential mountaineering techniques,
+            explore professional equipment and prepare
+            yourself for unforgettable mountain adventures.
+        </p>
+        <a href="#techniques" class="hero-btn">
+            <span class="arrow-circle">↓</span>
+            EXPLORE OUR GUIDE
+        </a>
+    </div>
+</section>
+
+<!-- TECHNIQUES SECTION -->
+<section class="techniques" id="techniques">
+    <div class="tech-intro">
+        <span class="section-label">
+            <svg class="label-icon" aria-hidden="true"><use href="#mountain-sun-icon"></use></svg>
+            OUR TECHNIQUES
+        </span>
+        <h2>Essential Mountaineering Techniques</h2>
+        <p>
+            Build your skills with proven techniques
+            that help you stay prepared, confident
+            and safe on every mountain adventure.
+        </p>
+        <button class="green-btn" onclick="openInfoModal('techniques')">
+            Learn More →
+        </button>
+    </div>
+
+    <div class="tech-card" onclick="openInfoModal('climbing')">
+        <img src="https://images.unsplash.com/photo-1464278533981-50106e6176b1?auto=format&fit=crop&w=700&q=85" alt="Mountain climbing">
+        <div class="tech-content">
+            <div class="tech-icon">♟</div>
+            <h3>Climbing Techniques</h3>
+            <p>Learn safe and effective climbing methods.</p>
+        </div>
+    </div>
+
+    <div class="tech-card" onclick="openInfoModal('trekking')">
+        <img src="https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&w=700&q=85" alt="Mountain trekking">
+        <div class="tech-content">
+            <div class="tech-icon">♧</div>
+            <h3>Trekking Skills</h3>
+            <p>Improve your trekking skills for every terrain.</p>
+        </div>
+    </div>
+
+    <div class="tech-card" onclick="openInfoModal('camping')">
+        <img src="https://images.unsplash.com/photo-1478131143081-80f7f84ca84d?auto=format&fit=crop&w=700&q=85" alt="Mountain camping">
+        <div class="tech-content">
+            <div class="tech-icon">⌂</div>
+            <h3>Camping Basics</h3>
+            <p>Master the essentials of a comfortable camp.</p>
+        </div>
+    </div>
+</section>
+
+<!-- EQUIPMENT SECTION -->
+<section class="equipment" id="equipment">
+    <div class="equipment-img">
+        <img src="https://images.unsplash.com/photo-1622260614153-03223fb72052?auto=format&fit=crop&w=900&q=85" alt="Mountaineering equipment">
+    </div>
+
+    <div class="equipment-info">
+        <span class="section-label">
+            <svg class="label-icon" aria-hidden="true"><use href="#mountain-sun-icon"></use></svg>
+            OUR EQUIPMENT
+        </span>
+        <h2>The Right Gear for the Great Outdoors</h2>
+        <p>
+            Equip yourself with reliable and high-quality
+            equipment for a safer and more enjoyable
+            outdoor adventure.
+        </p>
+        <button class="green-btn" onclick="openInfoModal('equipment')">
+            View Equipment →
+        </button>
+    </div>
+</section>
+
+<!-- EXPERT TIPS SECTION -->
+<section class="tips" id="tips">
+    <div class="tips-intro">
+        <span class="section-label">
+            <svg class="label-icon" aria-hidden="true"><use href="#mountain-sun-icon"></use></svg>
+            PRO TIPS
+        </span>
+        <h2>Expert Tips for Your Next Adventure</h2>
+        <p>
+            Follow these essential tips to plan better,
+            stay safer and enjoy your mountain journey.
+        </p>
+        <button class="green-btn" onclick="openInfoModal('tips')">
+            Read More Tips →
+        </button>
+    </div>
+
+    <div class="tip-card" onclick="openInfoModal('route')">
+        <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=700&q=85" alt="Mountain route">
+        <div class="tip-content">
+            <h3>Plan Your Route</h3>
+            <p>Know your destination and plan ahead.</p>
+        </div>
+    </div>
+
+    <div class="tip-card" onclick="openInfoModal('gearcheck')">
+        <img src="https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&w=700&q=85" alt="Hiking preparation">
+        <div class="tip-content">
+            <h3>Check Your Gear</h3>
+            <p>Make sure your equipment is in top shape.</p>
+        </div>
+    </div>
+
+    <div class="tip-card" onclick="openInfoModal('hydrate')">
+        <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=700&q=85" alt="Nature adventure">
+        <div class="tip-content">
+            <h3>Stay Hydrated</h3>
+            <p>Keep enough drinking water with you.</p>
+        </div>
+    </div>
+</section>
+
+<!-- CALL TO ACTION -->
+<section class="cta" id="contact">
+    <div>
+        <h2>Gear Up & Explore More</h2>
+        <p>Be prepared, stay safe, and enjoy the journey.</p>
+    </div>
+
+    <button class="green-btn" onclick="openPlanModal()">
+        Get Started →
+    </button>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <div class="footer-top">
+        <div class="footer-logo">
+            <div class="footer-logo-top">
+                <svg class="brand-icon" aria-hidden="true"><use href="#mountain-sun-icon"></use></svg>
+                NORTH
+            </div>
+            <span>OUTDOORS</span>
+        </div>
+
+        <div class="footer-links">
+            <a href="#home">Home</a>
+            <a href="#techniques">Techniques</a>
+            <a href="#equipment">Equipment</a>
+            <a href="#tips">Pro Tips</a>
+            <a href="javascript:void(0)" onclick="openPlanModal()">Book Trip</a>
+        </div>
+
+        <div class="social">
+            <a href="https://facebook.com" target="_blank" title="Facebook">f</a>
+            <a href="https://instagram.com" target="_blank" title="Instagram">◎</a>
+            <a href="https://youtube.com" target="_blank" title="YouTube">▶</a>
+            <a href="#home" title="Back to Top">↑</a>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>© 2025 North Outdoors. All Rights Reserved.</p>
+        <p>Explore • Respect • Preserve</p>
+    </div>
+</footer>
+
+<!-- INTERACTIVE PLAN TRIP MODAL -->
+<div class="modal-overlay" id="planModal">
+    <div class="modal-box">
+        <button class="close-modal" onclick="closeModals()">×</button>
+        <h3>Plan Your Mountain Escape</h3>
+        <p>Fill out your details below and our mountain guides will prepare a custom itinerary for you.</p>
+        <form class="modal-form" onsubmit="submitPlan(event)">
+            <input type="text" placeholder="Your Full Name" required>
+            <input type="email" placeholder="Email Address" required>
+            <select required>
+                <option value="">Select Experience Level</option>
+                <option value="beginner">Beginner Hiker</option>
+                <option value="intermediate">Intermediate Trekker</option>
+                <option value="advanced">Advanced Mountaineer</option>
+            </select>
+            <textarea rows="3" placeholder="Which mountain or trail do you want to explore?" required></textarea>
+            <button type="submit" class="green-btn" style="width: 100%;">Submit Trip Request</button>
+        </form>
+    </div>
+</div>
+
+<!-- INTERACTIVE INFO MODAL -->
+<div class="modal-overlay" id="infoModal">
+    <div class="modal-box">
+        <button class="close-modal" onclick="closeModals()">×</button>
+        <h3 id="infoTitle">Guide Details</h3>
+        <p id="infoDesc"></p>
+        <ul class="modal-list" id="infoList"></ul>
+        <button class="green-btn" onclick="closeModals()">Got It</button>
+    </div>
+</div>
+
+<script>
+    const modalData = {
+        techniques: {
+            title: "Mountaineering Techniques Guide",
+            desc: "Mastering core mountain skills reduces risk and saves energy on steep ascents.",
+            items: [
+                "Use the rest-step method on steep inclines to conserve leg energy.",
+                "Always maintain three points of contact during rock scrambling.",
+                "Practice self-arrest techniques with an ice axe before snow climbs."
+            ]
+        },
+        climbing: {
+            title: "Climbing Techniques",
+            desc: "Safe climbing starts with proper footwork, rope management, and balance.",
+            items: [
+                "Keep your weight centered over your feet rather than pulling with your arms.",
+                "Double-check all figure-eight knots and harness buckles before ascending.",
+                "Communicate clearly with your belayer using standard climbing commands."
+            ]
+        },
+        trekking: {
+            title: "Trekking Skills",
+            desc: "Long-distance trekking requires pacing and terrain awareness.",
+            items: [
+                "Use trekking poles to reduce knee impact by up to 25% on descents.",
+                "Take short, steady steps uphill instead of long strides.",
+                "Follow marked trails to prevent erosion and avoid getting lost."
+            ]
+        },
+        camping: {
+            title: "Mountain Camping Basics",
+            desc: "Setting up a safe camp protects you from sudden alpine weather shifts.",
+            items: [
+                "Pitch your tent on flat, well-drained ground away from dead trees.",
+                "Stake out all guy-lines tightly to withstand strong mountain winds.",
+                "Store food in bear-proof containers or hang it away from sleeping areas."
+            ]
+        },
+        equipment: {
+            title: "Essential Gear Checklist",
+            desc: "Having reliable gear ensures comfort and safety in unpredictable mountain conditions.",
+            items: [
+                "Layered Moisture-Wicking Clothing & Waterproof Outer Shell",
+                "Broken-in Waterproof Hiking Boots with High Ankle Support",
+                "First-Aid Kit, Headlamp, Emergency Whistle & Offline Map"
+            ]
+        },
+        tips: {
+            title: "Pro Mountain Safety Tips",
+            desc: "Smart preparation makes every outdoor trip safer and more enjoyable.",
+            items: [
+                "Check mountain weather forecasts 24 hours before departure.",
+                "Start early in the morning to avoid afternoon storms.",
+                "Always share your route and return time with someone at home."
+            ]
+        },
+        route: {
+            title: "Plan Your Route",
+            desc: "Study elevation gains, water sources, and turnaround times before hitting the trail.",
+            items: [
+                "Download offline GPS maps on your phone and carry a backup power bank.",
+                "Identify bail-out points in case weather turns bad."
+            ]
+        },
+        gearcheck: {
+            title: "Check Your Gear",
+            desc: "Inspect every piece of equipment at home before your trip begins.",
+            items: [
+                "Test zippers, tent poles, and headlamp batteries.",
+                "Ensure boots have solid tread and laces are not frayed."
+            ]
+        },
+        hydrate: {
+            title: "Stay Hydrated at Altitude",
+            desc: "Higher altitudes dehydrate your body faster even in cold weather.",
+            items: [
+                "Drink at least 3–4 liters of water per day during active treks.",
+                "Carry electrolyte tablets and a portable water filter."
+            ]
+        }
+    };
+
+    function openPlanModal() {
+        document.getElementById('planModal').classList.add('active');
+    }
+
+    function openInfoModal(key) {
+        const data = modalData[key];
+        if (!data) return;
+        document.getElementById('infoTitle').innerText = data.title;
+        document.getElementById('infoDesc').innerText = data.desc;
+        const list = document.getElementById('infoList');
+        list.innerHTML = '';
+        data.items.forEach(item => {
+            const li = document.createElement('li');
+            li.innerText = item;
+            list.appendChild(li);
+        });
+        document.getElementById('infoModal').classList.add('active');
+    }
+
+    function closeModals() {
+        document.getElementById('planModal').classList.remove('active');
+        document.getElementById('infoModal').classList.remove('active');
+    }
+
+    function submitPlan(event) {
+        event.preventDefault();
+        alert("Thank you! Your mountain escape request has been received. Our team will contact you shortly.");
+        event.target.reset();
+        closeModals();
+    }
+
+    window.onclick = function(event) {
+        if (event.target.classList.contains('modal-overlay')) {
+            closeModals();
+        }
+    }
+</script>
+
+</body>
+</html>
