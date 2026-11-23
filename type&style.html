@@ -1,0 +1,1020 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us |  Alpine Ascents | Mountain Escapes</title>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+:root{
+ --sage:#A3B18A;
+ --olive:#718355;
+ --forest:#344B35;
+ --deep:#263629;
+ --cream:#F5F3EB;
+ --white:#fff;
+ --gold:#C18F59;
+}
+
+*{
+ margin:0;
+ padding:0;
+ box-sizing:border-box;
+ scroll-behavior:smooth;
+}
+
+body{
+ background:var(--cream);
+ color:var(--forest);
+ font-family:'DM Sans',sans-serif;
+ overflow-x:hidden;
+}
+
+a{text-decoration:none;color:inherit;}
+
+img{
+ width:100%;
+ display:block;
+ object-fit:cover;
+}
+
+/* NAVBAR */
+
+header{
+ position:absolute;
+ top:0;
+ left:0;
+ width:100%;
+ padding:24px 8%;
+ display:flex;
+ align-items:center;
+ justify-content:space-between;
+ z-index:100;
+ color:white;
+}
+
+.logo{
+ font-size:21px;
+ letter-spacing:5px;
+ font-weight:500;
+}
+
+.logo small{
+ display:block;
+ font-size:8px;
+ letter-spacing:4px;
+ margin-top:4px;
+}
+
+nav{
+ display:flex;
+ gap:28px;
+}
+
+nav a{
+ font-size:11px;
+ transition:.3s;
+}
+
+nav a:hover{color:#d4dfb9;}
+
+nav a.active{
+ border-bottom:1px solid white;
+ padding-bottom:6px;
+}
+
+.nav-btn{
+ border:1px solid #ffffffaa;
+ border-radius:30px;
+ padding:12px 22px;
+ font-size:10px;
+ transition:.3s;
+}
+
+.nav-btn:hover{
+ background:var(--cream);
+ color:var(--forest);
+}
+
+.menu{
+ display:none;
+ cursor:pointer;
+ font-size:22px;
+}
+
+/* HERO */
+
+.hero{
+ min-height:570px;
+ height:75vh;
+ display:flex;
+ align-items:center;
+ padding:120px 9%;
+ color:white;
+ position:relative;
+ background:
+ linear-gradient(90deg,rgba(19,37,27,.78),rgba(19,37,27,.12)),
+ url('https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=2000&q=90')
+ center/cover no-repeat;
+}
+
+.hero-content{
+ max-width:650px;
+ animation:fadeIn 1.2s ease;
+}
+
+.eyebrow{
+ font-size:10px;
+ letter-spacing:5px;
+ color:var(--sage);
+ font-weight:700;
+}
+
+.hero h1{
+ font-family:'Cormorant Garamond',serif;
+ font-size:clamp(65px,8vw,100px);
+ font-weight:400;
+ line-height:.92;
+ margin:25px 0;
+}
+
+.hero p{
+ max-width:450px;
+ font-size:13px;
+ line-height:2;
+ color:#e7e9df;
+}
+
+.hero-link{
+ display:inline-flex;
+ align-items:center;
+ gap:13px;
+ margin-top:28px;
+ font-size:10px;
+ letter-spacing:2px;
+}
+
+.hero-link span{
+ width:38px;
+ height:38px;
+ display:grid;
+ place-items:center;
+ border:1px solid white;
+ border-radius:50%;
+ transition:.3s;
+}
+
+.hero-link:hover span{
+ background:white;
+ color:var(--forest);
+ transform:translateX(5px);
+}
+
+/* INTRO */
+
+.intro{
+ padding:75px 8%;
+ text-align:center;
+}
+
+.intro h2{
+ font-family:'Cormorant Garamond',serif;
+ font-size:48px;
+ font-weight:500;
+ margin:15px 0;
+}
+
+.intro h2 span{color:var(--olive);}
+
+.intro p{
+ max-width:700px;
+ margin:auto;
+ color:#7b8174;
+ font-size:13px;
+ line-height:2;
+}
+
+/* OUR STORY */
+
+.story{
+ padding:20px 8% 90px;
+ display:grid;
+ grid-template-columns:1.1fr .9fr;
+ gap:55px;
+ align-items:center;
+}
+
+.story-image{
+ height:470px;
+ position:relative;
+}
+
+.story-image img{height:100%;}
+
+.image-label{
+ position:absolute;
+ bottom:20px;
+ left:20px;
+ background:var(--cream);
+ color:var(--forest);
+ padding:14px 20px;
+ font-size:10px;
+ letter-spacing:2px;
+}
+
+.story-content h2{
+ font-family:'Cormorant Garamond',serif;
+ font-size:53px;
+ font-weight:500;
+ line-height:1;
+ margin:20px 0;
+}
+
+.story-content p{
+ font-size:12px;
+ line-height:2;
+ color:#7b8174;
+ margin-bottom:15px;
+}
+
+.story-sign{
+ display:flex;
+ align-items:center;
+ gap:15px;
+ margin-top:25px;
+}
+
+.story-sign i{
+ font-size:30px;
+ color:var(--olive);
+}
+
+.story-sign strong{
+ display:block;
+ font-size:12px;
+}
+
+.story-sign small{
+ color:#888e7d;
+ font-size:9px;
+}
+
+/* STATISTICS */
+
+.stats{
+ background:var(--forest);
+ padding:55px 8%;
+ display:grid;
+ grid-template-columns:repeat(4,1fr);
+ gap:25px;
+ text-align:center;
+}
+
+.stat h2{
+ font-family:'Cormorant Garamond',serif;
+ font-size:48px;
+ color:#c6d3a9;
+ font-weight:500;
+}
+
+.stat p{
+ color:#e0e6d8;
+ font-size:10px;
+ letter-spacing:1px;
+ margin-top:8px;
+}
+
+/* WHY CHOOSE US */
+
+.why{padding:85px 8%;}
+
+.section-title{
+ text-align:center;
+ margin-bottom:45px;
+}
+
+.section-title h2{
+ font-family:'Cormorant Garamond',serif;
+ font-size:48px;
+ font-weight:500;
+ margin:13px 0;
+}
+
+.section-title p{
+ color:#7b8174;
+ font-size:12px;
+ line-height:1.9;
+ max-width:550px;
+ margin:auto;
+}
+
+.why-grid{
+ display:grid;
+ grid-template-columns:repeat(3,1fr);
+ gap:20px;
+}
+
+.why-card{
+ background:white;
+ padding:32px 25px;
+ box-shadow:0 8px 25px #344b3510;
+ transition:.4s;
+}
+
+.why-card:hover{
+ transform:translateY(-9px);
+ box-shadow:0 15px 35px #344b3520;
+}
+
+.why-card i{
+ width:52px;
+ height:52px;
+ border-radius:50%;
+ background:#e9ede2;
+ display:grid;
+ place-items:center;
+ font-size:22px;
+ color:var(--olive);
+ margin-bottom:20px;
+}
+
+.why-card h3{
+ font-family:'Cormorant Garamond',serif;
+ font-size:25px;
+ margin-bottom:10px;
+}
+
+.why-card p{
+ font-size:11px;
+ color:#818778;
+ line-height:1.9;
+}
+
+/* NATURE SECTION */
+
+.nature{
+ padding:0 8% 90px;
+ display:grid;
+ grid-template-columns:.9fr 1.1fr;
+ gap:50px;
+ align-items:center;
+}
+
+.nature-content h2{
+ font-family:'Cormorant Garamond',serif;
+ font-size:50px;
+ font-weight:500;
+ line-height:1;
+ margin:18px 0;
+}
+
+.nature-content p{
+ font-size:12px;
+ color:#7b8174;
+ line-height:2;
+ margin-bottom:20px;
+}
+
+.nature-image{height:390px;}
+.nature-image img{height:100%;}
+
+/* GALLERY */
+
+.gallery{
+ padding:80px 8%;
+ background:#E9EDE2;
+}
+
+.gallery-grid{
+ display:grid;
+ grid-template-columns:1.2fr 1fr 1fr;
+ grid-template-rows:190px 190px;
+ gap:15px;
+}
+
+.gallery-item{overflow:hidden;}
+
+.gallery-item:first-child{grid-row:span 2;}
+
+.gallery-item img{
+ height:100%;
+ transition:.6s;
+}
+
+.gallery-item:hover img{transform:scale(1.08);}
+
+/* CTA */
+
+.cta{
+ padding:90px 9%;
+ color:white;
+ text-align:center;
+ background:
+ linear-gradient(#253d2cbd,#253d2cbd),
+ url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1800&q=85')
+ center/cover;
+}
+
+.cta h2{
+ font-family:'Cormorant Garamond',serif;
+ font-size:clamp(42px,6vw,65px);
+ font-weight:400;
+}
+
+.cta p{
+ max-width:580px;
+ margin:15px auto 28px;
+ color:#e1e8dc;
+ font-size:12px;
+ line-height:2;
+}
+
+.btn{
+ display:inline-block;
+ background:var(--sage);
+ color:var(--deep);
+ padding:14px 26px;
+ border-radius:30px;
+ font-size:10px;
+ font-weight:700;
+ transition:.3s;
+}
+
+.btn:hover{
+ background:var(--cream);
+ transform:translateY(-4px);
+}
+
+/* FOOTER */
+
+footer{
+ background:var(--forest);
+ color:white;
+ padding:55px 8% 20px;
+}
+
+.footer-grid{
+ display:grid;
+ grid-template-columns:2fr 1fr 1fr 1fr;
+ gap:30px;
+ padding-bottom:35px;
+}
+
+.footer-logo{
+ font-size:22px;
+ letter-spacing:4px;
+ margin-bottom:15px;
+}
+
+.footer-grid h4{
+ color:#d3ddbd;
+ font-size:12px;
+ margin-bottom:18px;
+}
+
+.footer-grid p{
+ color:#d5ddd0;
+ font-size:11px;
+ line-height:2;
+}
+
+.footer-grid a{
+ display:block;
+ color:#d5ddd0;
+ font-size:11px;
+ margin-bottom:12px;
+ transition:.3s;
+}
+
+.footer-grid a:hover{
+ color:#e2c99f;
+ padding-left:5px;
+}
+
+.socials{
+ display:flex;
+ gap:10px;
+ margin-top:18px;
+}
+
+.socials a{
+ width:34px;
+ height:34px;
+ border:1px solid #ffffff50;
+ border-radius:50%;
+ display:grid;
+ place-items:center;
+}
+
+.socials a:hover{
+ background:var(--sage);
+ color:var(--forest);
+}
+
+.footer-bottom{
+ border-top:1px solid #ffffff30;
+ padding-top:20px;
+ display:flex;
+ justify-content:space-between;
+ flex-wrap:wrap;
+ gap:12px;
+ font-size:9px;
+ color:#d5dfd0;
+}
+
+/* ANIMATIONS */
+
+@keyframes fadeIn{
+ from{opacity:0;transform:translateY(35px);}
+ to{opacity:1;transform:translateY(0);}
+}
+
+.reveal{
+ opacity:0;
+ transform:translateY(35px);
+ transition:.8s ease;
+}
+
+.reveal.show{
+ opacity:1;
+ transform:translateY(0);
+}
+
+/* RESPONSIVE */
+
+@media(max-width:950px){
+ .story,.nature{gap:30px;}
+ .why-grid{grid-template-columns:repeat(2,1fr);}
+ .footer-grid{grid-template-columns:repeat(2,1fr);}
+}
+
+@media(max-width:700px){
+
+ header{padding:20px 6%;}
+
+ .menu{display:block;}
+
+ nav{
+  display:none;
+  position:absolute;
+  top:75px;
+  left:0;
+  width:100%;
+  padding:25px;
+  background:var(--forest);
+  flex-direction:column;
+  text-align:center;
+ }
+
+ nav.active{display:flex;}
+ .nav-btn{display:none;}
+
+ .hero{
+  min-height:600px;
+  height:85vh;
+  padding:120px 7%;
+ }
+
+ .hero h1{font-size:67px;}
+
+ .intro{padding:60px 7%;}
+ .intro h2{font-size:40px;}
+
+ .story,.nature{
+  padding:10px 7% 60px;
+  grid-template-columns:1fr;
+ }
+
+ .story-image{height:320px;}
+ .story-content h2,.nature-content h2{font-size:43px;}
+
+ .stats{grid-template-columns:repeat(2,1fr);}
+
+ .why{padding:65px 7%;}
+ .why-grid{grid-template-columns:1fr;}
+
+ .nature-image{height:300px;}
+
+ .gallery{padding:60px 7%;}
+ .gallery-grid{
+  grid-template-columns:1fr 1fr;
+  grid-template-rows:170px 170px;
+ }
+
+ .gallery-item:first-child{grid-row:auto;}
+
+ .cta{padding:70px 7%;}
+
+ footer{padding:45px 7% 20px;}
+ .footer-grid{grid-template-columns:1fr 1fr;}
+}
+
+@media(max-width:430px){
+ .footer-grid{grid-template-columns:1fr;}
+ .gallery-grid{grid-template-columns:1fr;}
+ .gallery-item{height:220px;}
+}
+
+@media(prefers-reduced-motion:reduce){
+ *,*::before,*::after{
+  animation:none!important;
+  transition:none!important;
+  scroll-behavior:auto!important;
+ }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<header>
+
+<a href="index.html" class="logo">
+<i class="fa-solid fa-mountain-sun"></i>
+<span>Alpine Ascents<small>MOUNTAIN ESCAPES</small></span>
+</a>
+
+<nav id="navbar">
+<a href="index.html">Home</a>
+<a href="aboutus.html">About US</a>
+<a href="typeand style.html" class="active">Type & Styles</a>
+<a href="technique.html">Techniques & Equipment </a>
+<a href="gallery.html">Gallery</a>
+</nav>
+
+<a href="#contact" class="nav-btn">Plan Your Escape ↗</a>
+
+<i class="fa-solid fa-bars menu" id="menu"></i>
+
+</header>
+
+<!-- HERO SECTION -->
+
+<section class="hero">
+<div class="hero-content">
+
+<div class="eyebrow">GET TO KNOW VERDANT</div>
+
+<h1>Our story.<br>Our passion.</h1>
+
+<p>
+We believe the most beautiful journeys
+begin where nature takes over.
+Discover who we are and why we love
+the mountains.
+</p>
+
+<a href="#story" class="hero-link">
+<span><i class="fa-solid fa-arrow-down"></i></span>
+DISCOVER OUR STORY
+</a>
+
+</div>
+</section>
+
+<!-- INTRO -->
+
+<section class="intro">
+
+<div class="eyebrow">WELCOME TO VERDANT</div>
+
+<h2>Closer to nature.<br>
+<!-- <span>Closer to yourself.</span></h2> -->
+
+<p>
+VERDANT is inspired by the peaceful beauty
+of mountains, forests and natural landscapes.
+Our goal is to celebrate nature, inspire exploration
+and bring people closer to the outdoors.
+</p>
+
+</section>
+
+<!-- OUR STORY -->
+
+<section class="story" id="story">
+
+<div class="story-image reveal">
+<img src="https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1100&q=85" alt="Beautiful forest landscape">
+
+<div class="image-label">INSPIRED BY NATURE</div>
+</div>
+
+<div class="story-content reveal">
+
+<div class="eyebrow">THE STORY BEHIND US</div>
+
+<h2>A love for nature.<br>
+A journey without limits.</h2>
+
+<p>
+Our journey started with a simple belief:
+nature has the power to inspire, refresh
+and transform our lives.
+</p>
+
+<p>
+From beautiful mountain peaks to peaceful
+forest valleys, we celebrate the places that
+make the world extraordinary.
+</p>
+
+<p>
+We want to encourage every explorer to
+discover new horizons, appreciate natural
+beauty and create unforgettable memories.
+</p>
+
+<div class="story-sign">
+<i class="fa-solid fa-mountain-sun"></i>
+<div>
+<strong>VERDANT TEAM</strong>
+<small>EXPLORING THE BEAUTY OF NATURE</small>
+</div>
+</div>
+
+</div>
+</section>
+
+<!-- STATISTICS -->
+
+<section class="stats">
+
+<div class="stat">
+<h2>50+</h2>
+<p>BEAUTIFUL DESTINATIONS</p>
+</div>
+
+<div class="stat">
+<h2>100+</h2>
+<p>NATURE EXPERIENCES</p>
+</div>
+
+<div class="stat">
+<h2>25+</h2>
+<p>MOUNTAIN REGIONS</p>
+</div>
+
+<div class="stat">
+<h2>100%</h2>
+<p>LOVE FOR NATURE</p>
+</div>
+
+</section>
+
+<!-- WHY CHOOSE US -->
+
+<section class="why">
+
+<div class="section-title">
+<div class="eyebrow">THE VERDANT DIFFERENCE</div>
+
+<h2>Why Explore With Us?</h2>
+
+<p>
+We celebrate the beauty of nature through
+inspiration, exploration and unforgettable
+mountain experiences.
+</p>
+</div>
+
+<div class="why-grid">
+
+<div class="why-card reveal">
+<i class="fa-solid fa-mountain-sun"></i>
+<h3>Beautiful Destinations</h3>
+<p>Discover breathtaking mountain landscapes and peaceful natural places.</p>
+</div>
+
+<div class="why-card reveal">
+<i class="fa-solid fa-leaf"></i>
+<h3>Nature First</h3>
+<p>Promoting appreciation, awareness and respect for the environment.</p>
+</div>
+
+<div class="why-card reveal">
+<i class="fa-solid fa-compass"></i>
+<h3>Adventure Spirit</h3>
+<p>Explore new horizons and discover the excitement of the outdoors.</p>
+</div>
+
+<div class="why-card reveal">
+<i class="fa-solid fa-camera"></i>
+<h3>Beautiful Memories</h3>
+<p>Celebrate special moments and capture the beauty of nature.</p>
+</div>
+
+<div class="why-card reveal">
+<i class="fa-solid fa-heart"></i>
+<h3>Passion For Travel</h3>
+<p>Inspired by exploration and the wonderful places around us.</p>
+</div>
+
+<div class="why-card reveal">
+<i class="fa-solid fa-shield-halved"></i>
+<h3>Responsible Travel</h3>
+<p>Encouraging safe adventures and responsible interaction with nature.</p>
+</div>
+
+</div>
+</section>
+
+<!-- NATURE SECTION -->
+
+<section class="nature">
+
+<div class="nature-content reveal">
+
+<div class="eyebrow">OUR LOVE FOR THE OUTDOORS</div>
+
+<h2>Every mountain<br>
+has a story to tell.</h2>
+
+<p>
+Mountains are more than beautiful landscapes.
+They represent strength, freedom, discovery
+and the endless wonders of nature.
+</p>
+
+<p>
+We invite you to explore these amazing places,
+learn their stories and find inspiration in
+the natural world around you.
+</p>
+
+<a href="index.html#destinations" class="text-link">
+EXPLORE MOUNTAINS →
+</a>
+
+</div>
+
+<div class="nature-image reveal">
+<img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1100&q=85" alt="Mountain nature">
+</div>
+
+</section>
+
+<!-- GALLERY -->
+
+<section class="gallery">
+
+<div class="section-title">
+
+<div class="eyebrow">BEAUTY OF THE WILD</div>
+
+<h2>Our World In Pictures</h2>
+
+<p>
+A glimpse of the beautiful landscapes
+that inspire everything we do.
+</p>
+
+</div>
+
+<div class="gallery-grid">
+
+<div class="gallery-item reveal">
+<img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=900&q=85" alt="Mountain">
+</div>
+
+<div class="gallery-item reveal">
+<img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=700&q=85" alt="Snow peak">
+</div>
+
+<div class="gallery-item reveal">
+<img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=700&q=85" alt="Mountain lake">
+</div>
+
+<div class="gallery-item reveal">
+<img src="https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&fit=crop&w=700&q=85" alt="Forest">
+</div>
+
+<div class="gallery-item reveal">
+<img src="https://images.unsplash.com/photo-1454496522488-7a8e488e8606?auto=format&fit=crop&w=700&q=85" alt="Mountain landscape">
+</div>
+
+</div>
+</section>
+
+<!-- CTA -->
+
+<section class="cta">
+
+<div class="eyebrow">THE ADVENTURE CONTINUES</div>
+
+<h2>Discover More. Explore Further.</h2>
+
+<p>
+The mountains are waiting.
+Let your next journey bring you closer
+to the beauty and peace of nature.
+</p>
+
+<a href="index.html#destinations" class="btn">
+EXPLORE DESTINATIONS ↗
+</a>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer id="contact">
+
+<div class="footer-grid">
+
+<div>
+<div class="footer-logo">VERDANT.</div>
+
+<p>
+Inspired by mountains, forests and the
+beautiful world of nature. Discover,
+explore and experience the outdoors.
+</p>
+
+<div class="socials">
+<a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+<a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+<a href="#" aria-label="Pinterest"><i class="fa-brands fa-pinterest"></i></a>
+</div>
+</div>
+
+<div>
+<h4>EXPLORE</h4>
+<a href="index.html">Home</a>
+<a href="aboutus.html">About Us</a>
+<a href="typeand style.html">Type and Style</a>
+<a href="gallery.html">Gallery</a>
+<a href="technique.html">Techniques & Equipment</a>
+</div>
+
+<div>
+<h4>EXPERIENCES</h4>
+<a href="index.html#experiences">Trekking</a>
+<a href="index.html#experiences">Camping</a>
+<a href="index.html#experiences">Climbing</a>
+<a href="index.html#experiences">Photography</a>
+</div>
+
+<div>
+<h4>CONTACT</h4>
+<a href="mailto:hello@verdant.com">Email Us</a>
+<a href="#contact">Contact Us</a>
+<a href="index.html#home">Back To Home</a>
+</div>
+
+</div>
+
+<div class="footer-bottom">
+<span>© 2026 VERDANT. ALL RIGHTS RESERVED.</span>
+<span>DESIGNED FOR NATURE LOVERS.</span>
+</div>
+
+</footer>
+
+<script>
+
+// MOBILE NAVBAR
+
+const menu=document.getElementById("menu");
+const navbar=document.getElementById("navbar");
+
+menu.addEventListener("click",()=>{
+ navbar.classList.toggle("active");
+ menu.classList.toggle("fa-bars");
+ menu.classList.toggle("fa-xmark");
+});
+
+document.querySelectorAll("#navbar a").forEach(link=>{
+ link.addEventListener("click",()=>{
+  navbar.classList.remove("active");
+  menu.classList.add("fa-bars");
+  menu.classList.remove("fa-xmark");
+ });
+});
+
+// SCROLL REVEAL ANIMATION
+
+const observer=new IntersectionObserver((entries)=>{
+ entries.forEach(entry=>{
+  if(entry.isIntersecting){
+   entry.target.classList.add("show");
+   observer.unobserve(entry.target);
+  }
+ });
+},{threshold:.12});
+
+document.querySelectorAll(".reveal").forEach(element=>{
+ observer.observe(element);
+});
+
+</script>
+
+</body>
+</html>
