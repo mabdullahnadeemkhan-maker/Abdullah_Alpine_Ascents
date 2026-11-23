@@ -1,0 +1,958 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alpine Ascents</title>
+<link rel="icon" type="img/png" href="mountain.jpg">
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+:root{
+    --sage:#A3B18A;
+    --olive:#718355;
+    --forest:#344B35;
+    --dark:#17261D;
+    --cream:#F5F3EB;
+    --white:#fff;
+    --gold:#C6A675;
+}
+
+body{
+    font-family:'DM Sans',sans-serif;
+    background:var(--cream);
+    color:var(--forest);
+}
+
+a{text-decoration:none;color:inherit;}
+
+img{display:block;width:100%;object-fit:cover;}
+
+/* NAVBAR */
+
+header{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:10;
+    padding:24px 7%;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    color:white;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    letter-spacing:5px;
+    font-size:19px;
+    font-weight:500;
+}
+
+.logo i{
+    font-size:23px;
+    color:#e3dfca;
+}
+
+.logo small{
+    display:block;
+    font-size:8px;
+    letter-spacing:4px;
+    margin-top:3px;
+}
+
+nav{
+    display:flex;
+    gap:30px;
+}
+
+nav a{
+    font-size:11px;
+    color:white;
+    transition:.3s;
+}
+
+nav a:hover{color:#d9dfbd;}
+
+.book-btn{
+    border:1px solid #ffffff99;
+    border-radius:30px;
+    padding:12px 22px;
+    font-size:11px;
+    transition:.3s;
+    background:transparent;
+    color:white;
+    cursor:pointer;
+    font-family:inherit;
+}
+
+.book-btn:hover{
+    background:var(--cream);
+    color:var(--forest);
+}
+
+.menu{
+    display:none;
+    cursor:pointer;
+    font-size:22px;
+}
+
+/* HERO */
+
+.hero{
+    min-height:690px;
+    height:95vh;
+    position:relative;
+    display:flex;
+    align-items:center;
+    padding:120px 9%;
+    color:white;
+    background:
+    linear-gradient(90deg,
+    rgba(13,29,24,.64),
+    rgba(13,29,24,.08) 80%),
+    linear-gradient(0deg,
+    rgba(10,25,20,.38),
+    transparent 45%),
+    url('https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=2000&q=90')
+    center/cover no-repeat;
+}
+
+.hero-content{
+    max-width:540px;
+    animation:appear 1.3s ease;
+}
+
+.eyebrow{
+    font-size:10px;
+    letter-spacing:5px;
+    color:#e4dfc9;
+    font-weight:600;
+}
+
+.hero h1{
+    font-family:'Cormorant Garamond',serif;
+    font-size:clamp(58px,8vw,100px);
+    font-weight:400;
+    line-height:.94;
+    margin:25px 0;
+}
+
+.hero p{
+    max-width:390px;
+    color:#f0f0e9;
+    line-height:1.9;
+    font-size:13px;
+}
+
+.hero-action{
+    display:inline-flex;
+    align-items:center;
+    gap:15px;
+    margin-top:30px;
+    font-size:10px;
+    letter-spacing:2px;
+    text-transform:uppercase;
+}
+
+.circle{
+    width:42px;
+    height:42px;
+    display:grid;
+    place-items:center;
+    border:1px solid white;
+    border-radius:50%;
+    transition:.3s;
+}
+
+.hero-action:hover .circle{
+    background:white;
+    color:var(--forest);
+    transform:translateX(5px);
+}
+
+.hero-bottom{
+    position:absolute;
+    bottom:28px;
+    left:9%;
+    font-size:9px;
+    letter-spacing:3px;
+    color:#eee;
+}
+
+/* INTRO */
+
+.intro{
+    padding:65px 8% 25px;
+    display:flex;
+    align-items:end;
+    justify-content:space-between;
+    gap:30px;
+}
+
+.intro h2{
+    font-family:'Cormorant Garamond',serif;
+    font-size:45px;
+    line-height:1.1;
+    font-weight:500;
+}
+
+.intro h2 span{
+    color:var(--olive);
+}
+
+.intro-right{
+    max-width:350px;
+    font-size:11px;
+    color:#72796b;
+    line-height:1.9;
+}
+
+.view-all{
+    display:inline-block;
+    font-size:10px;
+    letter-spacing:2px;
+    margin-top:12px;
+    color:var(--forest);
+    border-bottom:1px solid var(--sage);
+    padding-bottom:5px;
+}
+
+/* DESTINATION CARDS */
+
+.destinations{
+    padding:15px 8% 70px;
+}
+
+.destination-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:15px;
+}
+
+.destination-card{
+    height:330px;
+    position:relative;
+    overflow:hidden;
+    cursor:pointer;
+}
+
+.destination-card img{
+    height:100%;
+    transition:.8s;
+}
+
+.destination-card:hover img{
+    transform:scale(1.1);
+}
+
+.destination-card:after{
+    content:'';
+    position:absolute;
+    inset:0;
+    background:linear-gradient(transparent 35%,rgba(12,25,17,.78));
+}
+
+.destination-info{
+    position:absolute;
+    z-index:2;
+    bottom:22px;
+    left:20px;
+    right:20px;
+    color:white;
+}
+
+.destination-info small{
+    font-size:9px;
+    letter-spacing:2px;
+    color:#d8dfcb;
+}
+
+.destination-info h3{
+    font-family:'Cormorant Garamond',serif;
+    font-size:29px;
+    font-weight:500;
+    margin:7px 0;
+}
+
+.destination-info p{
+    font-size:10px;
+    color:#e5e8df;
+}
+
+.destination-info .arrow{
+    position:absolute;
+    right:0;
+    bottom:3px;
+    border:1px solid #ffffffaa;
+    border-radius:50%;
+    width:30px;
+    height:30px;
+    display:grid;
+    place-items:center;
+    transition:.3s;
+}
+
+.destination-card:hover .arrow{
+    background:white;
+    color:var(--forest);
+}
+
+/* ABOUT SECTION */
+
+.about{
+    padding:0 8% 75px;
+    display:grid;
+    grid-template-columns:1.15fr .85fr;
+    gap:50px;
+    align-items:center;
+}
+
+.about-image{
+    height:420px;
+    position:relative;
+}
+
+.about-image img{
+    height:100%;
+}
+
+.about-content{
+    padding:20px 0;
+}
+
+.about-content .eyebrow{
+    color:var(--olive);
+}
+
+.about-content h2{
+    font-family:'Cormorant Garamond',serif;
+    font-size:48px;
+    line-height:1;
+    font-weight:500;
+    margin:20px 0;
+}
+
+.about-content p{
+    color:#737a6c;
+    font-size:12px;
+    line-height:2;
+    margin-bottom:25px;
+}
+
+.about-stats{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:12px;
+    border-top:1px solid #d7d9cb;
+    padding-top:25px;
+}
+
+.about-stat i{
+    color:var(--olive);
+    font-size:20px;
+    margin-bottom:12px;
+}
+
+.about-stat h4{
+    font-size:10px;
+    font-weight:600;
+}
+
+.about-stat small{
+    color:#8b9081;
+    font-size:8px;
+    display:block;
+    margin-top:5px;
+}
+
+/* BOTTOM BANNER */
+
+.banner{
+    min-height:320px;
+    padding:70px 9%;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:30px;
+    color:white;
+    background:
+    linear-gradient(90deg,rgba(14,31,24,.85),rgba(14,31,24,.35)),
+    url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1800&q=85')
+    center/cover;
+}
+
+.banner h2{
+    font-family:'Cormorant Garamond',serif;
+    font-size:clamp(38px,5vw,60px);
+    font-weight:400;
+}
+
+.banner p{
+    max-width:430px;
+    color:#e3e8de;
+    font-size:11px;
+    line-height:1.9;
+    margin-top:12px;
+}
+
+.banner-btn{
+    padding:14px 25px;
+    border:1px solid #fff;
+    border-radius:30px;
+    white-space:nowrap;
+    font-size:10px;
+    transition:.3s;
+    background:transparent;
+    color:white;
+    cursor:pointer;
+    font-family:inherit;
+}
+
+.banner-btn:hover{
+    background:white;
+    color:var(--forest);
+}
+
+/* FOOTER */
+
+footer{
+    background:var(--forest);
+    color:white;
+    padding:45px 8% 22px;
+}
+
+.footer-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
+    flex-wrap:wrap;
+    padding-bottom:25px;
+}
+
+.footer-top h3{
+    font-family:'Cormorant Garamond',serif;
+    font-size:28px;
+    font-weight:400;
+}
+
+.footer-links{
+    display:flex;
+    gap:24px;
+    flex-wrap:wrap;
+}
+
+.footer-links a{
+    font-size:10px;
+    color:#e1e6d9;
+}
+
+.footer-links a:hover{color:#d5c39a;}
+
+.footer-bottom{
+    border-top:1px solid #ffffff30;
+    padding-top:20px;
+    display:flex;
+    justify-content:space-between;
+    gap:15px;
+    flex-wrap:wrap;
+    font-size:9px;
+    color:#c6d0bf;
+}
+
+/* MODALS (POPUPS FOR WORKING BUTTONS) */
+
+.modal-overlay{
+    position:fixed;
+    inset:0;
+    background:rgba(13,29,24,0.8);
+    backdrop-filter:blur(4px);
+    display:none;
+    place-items:center;
+    z-index:100;
+    padding:20px;
+}
+
+.modal-overlay.active{
+    display:grid;
+}
+
+.modal-box{
+    background:var(--cream);
+    color:var(--forest);
+    max-width:460px;
+    width:100%;
+    padding:35px;
+    position:relative;
+    border-radius:4px;
+    box-shadow:0 20px 50px rgba(0,0,0,0.3);
+    animation:appear 0.3s ease;
+}
+
+.modal-close{
+    position:absolute;
+    top:18px;
+    right:20px;
+    background:none;
+    border:none;
+    font-size:20px;
+    color:var(--forest);
+    cursor:pointer;
+}
+
+.modal-box h3{
+    font-family:'Cormorant Garamond',serif;
+    font-size:32px;
+    margin-bottom:8px;
+}
+
+.modal-box p{
+    font-size:12px;
+    color:#687061;
+    line-height:1.7;
+    margin-bottom:20px;
+}
+
+.form-group{
+    margin-bottom:14px;
+}
+
+.form-group label{
+    display:block;
+    font-size:10px;
+    letter-spacing:1.5px;
+    text-transform:uppercase;
+    margin-bottom:6px;
+    font-weight:600;
+}
+
+.form-group input,
+.form-group select{
+    width:100%;
+    padding:11px 12px;
+    border:1px solid #c9ccb9;
+    background:white;
+    font-family:inherit;
+    font-size:12px;
+    color:var(--forest);
+    outline:none;
+}
+
+.form-group input:focus,
+.form-group select:focus{
+    border-color:var(--forest);
+}
+
+.submit-btn{
+    width:100%;
+    padding:13px;
+    background:var(--forest);
+    color:white;
+    border:none;
+    font-size:11px;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    cursor:pointer;
+    margin-top:8px;
+    transition:0.3s;
+}
+
+.submit-btn:hover{
+    background:var(--olive);
+}
+
+/* ANIMATIONS */
+
+@keyframes appear{
+    from{
+        opacity:0;
+        transform:translateY(25px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+.reveal{
+    opacity:0;
+    transform:translateY(35px);
+    transition:all .9s ease;
+}
+
+.reveal.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+/* RESPONSIVE */
+
+@media(max-width:850px){
+    nav{gap:15px;}
+    .hero{min-height:650px;}
+    .destination-grid{grid-template-columns:repeat(2,1fr);}
+    .about{grid-template-columns:1fr;gap:25px;}
+    .about-image{height:350px;}
+}
+
+@media(max-width:650px){
+    header{padding:20px 6%;}
+    .menu{display:block;}
+    nav{
+        display:none;
+        position:absolute;
+        top:75px;
+        left:0;
+        width:100%;
+        padding:25px;
+        background:var(--forest);
+        flex-direction:column;
+        text-align:center;
+    }
+    nav.active{display:flex;}
+    .book-btn{display:none;}
+    .hero{height:90vh;min-height:600px;padding:120px 7%;background-position:center;}
+    .hero h1{font-size:65px;}
+    .intro{display:block;padding:55px 7% 20px;}
+    .intro h2{font-size:38px;}
+    .intro-right{margin-top:20px;}
+    .destinations{padding:15px 7% 50px;}
+    .destination-grid{grid-template-columns:1fr;}
+    .destination-card{height:340px;}
+    .about{padding:0 7% 55px;}
+    .about-content h2{font-size:42px;}
+    .banner{display:block;padding:65px 7%;}
+    .banner-btn{display:inline-block;margin-top:25px;}
+    footer{padding:40px 7% 20px;}
+    .footer-top{align-items:flex-start;flex-direction:column;}
+    .footer-links{gap:17px;}
+}
+
+@media(prefers-reduced-motion:reduce){
+    *,*::before,*::after{
+        scroll-behavior:auto!important;
+        animation:none!important;
+        transition:none!important;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<header>
+    <a href="#home" class="logo">
+        <i class="fa-solid fa-mountain-sun"></i>
+        <span>Alpine Ascents<small>MOUNTAIN ESCAPES</small></span>
+    </a>
+
+    <nav id="nav">
+        <a href="index.html">Home</a>
+        <a href="aboutus.html">About Us</a>
+        <a href="Typeand style.html">Type and style</a>
+        <a href="technique.html">Technique & Equipment</a>
+        <a href="gallery.html">Gallary</a>
+    </nav>
+
+    <button class="book-btn" onclick="openBookingModal()">Book Your Stay ↗</button>
+
+    <i class="fa-solid fa-bars menu" id="menu"></i>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="home">
+    <div class="hero-content">
+        <div class="eyebrow">MOUNTAIN ESCAPES & QUIET LIVING</div>
+        <h1>Find your<br>quiet place.</h1>
+        <p>
+            Escape into the peaceful beauty of mountains,
+            where fresh air, beautiful lakes and nature
+            create unforgettable moments.
+        </p>
+
+        <a href="#destinations" class="hero-action">
+            <span class="circle">
+                <i class="fa-solid fa-arrow-right"></i>
+            </span>
+            EXPLORE DESTINATIONS
+        </a>
+    </div>
+
+    <div class="hero-bottom">
+        DISCOVER NATURE · EXPERIENCE PEACE
+    </div>
+</section>
+
+<!-- INTRO -->
+<section class="intro" id="experiences">
+    <div>
+        <div class="eyebrow" style="color:#718355">
+            DISCOVER YOUR NEXT ESCAPE
+        </div>
+        <h2>
+            Wilder places.<br>
+            <span>Brighter days.</span>
+        </h2>
+    </div>
+
+    <div class="intro-right">
+        <p>
+            Find hidden lakes, peaceful forests and
+            unforgettable mountain destinations.
+            Discover a different kind of travel experience.
+        </p>
+        <a href="#destinations" class="view-all">
+            VIEW ALL DESTINATIONS →
+        </a>
+    </div>
+</section>
+
+<!-- DESTINATION CARDS -->
+<section class="destinations" id="destinations">
+    <div class="destination-grid">
+
+        <div class="destination-card reveal" onclick="openDestinationModal('Pinecrest Lake', '01 / LAKESIDE ESCAPE', 'Enjoy crystal-clear alpine waters, private wooden cabins, kayaking at sunrise, and peaceful stargazing by the shore.')">
+            <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=900&q=85" alt="Pinecrest Lake">
+            <div class="destination-info">
+                <small>01 / LAKESIDE ESCAPE</small>
+                <h3>Pinecrest Lake</h3>
+                <p>Clear waters. Endless horizons.</p>
+                <span class="arrow">↗</span>
+            </div>
+        </div>
+
+        <div class="destination-card reveal" onclick="openDestinationModal('Evergreen Valley', '02 / FOREST RETREAT', 'Surrounded by ancient pine forests, Evergreen Valley offers guided nature walks, outdoor wellness spas, and cozy fireplace suites.')">
+            <img src="https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&fit=crop&w=900&q=85" alt="Evergreen Valley">
+            <div class="destination-info">
+                <small>02 / FOREST RETREAT</small>
+                <h3>Evergreen Valley</h3>
+                <p>Where nature slows down.</p>
+                <span class="arrow">↗</span>
+            </div>
+        </div>
+
+        <div class="destination-card reveal" onclick="openDestinationModal('Summit Ridge', '03 / MOUNTAIN ESCAPE', 'High-altitude ridge lodges with panoramic views, private hiking trails, and crisp mountain air away from the crowds.')">
+            <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=900&q=85" alt="Summit Ridge">
+            <div class="destination-info">
+                <small>03 / MOUNTAIN ESCAPE</small>
+                <h3>Summit Ridge</h3>
+                <p>Rugged peaks. Quiet trails.</p>
+                <span class="arrow">↗</span>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+    <div class="about-image reveal">
+        <img src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=1200&q=85" alt="Beautiful mountain lake">
+    </div>
+
+    <div class="about-content reveal">
+        <div class="eyebrow">A QUIETER KIND OF LIFE</div>
+        <h2>
+            More than a stay.<br>
+            A state of mind.
+        </h2>
+        <p>
+            Our mountain retreats are designed for
+            deeper connections with nature, with
+            beautiful views, peaceful surroundings
+            and unforgettable moments.
+            Experience the simple beauty of mountain life.
+        </p>
+
+        <div class="about-stats">
+            <div class="about-stat">
+                <i class="fa-solid fa-mountain-sun"></i>
+                <h4>SCENIC</h4>
+                <small>LANDSCAPES</small>
+            </div>
+            <div class="about-stat">
+                <i class="fa-solid fa-tree"></i>
+                <h4>NATURE</h4>
+                <small>EXPERIENCES</small>
+            </div>
+            <div class="about-stat">
+                <i class="fa-solid fa-spa"></i>
+                <h4>PEACEFUL</h4>
+                <small>GETAWAYS</small>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- BOTTOM BANNER -->
+<section class="banner">
+    <div>
+        <div class="eyebrow">PLAN YOUR ESCAPE</div>
+        <h2>The mountains are calling.</h2>
+        <p>
+            Leave the everyday behind and discover
+            beautiful places, peaceful surroundings
+            and the freedom of mountain living.
+        </p>
+    </div>
+
+    <button class="banner-btn" onclick="openBookingModal()">
+        Book Your Escape ↗
+    </button>
+</section>
+
+<!-- FOOTER -->
+<footer id="contact">
+    <div class="footer-top">
+        <h3>NORTH — Mountain Escapes</h3>
+        <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="gallery.html">Gallary</a>
+            <a href="aboutus.html">About</a>
+            <a href="javascript:void(0)" onclick="openBookingModal()">Book Now</a>
+            <a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>© 2026 NORTH. ALL RIGHTS RESERVED.</p>
+        <p>MADE FOR NATURE LOVERS.</p>
+    </div>
+</footer>
+
+<!-- BOOKING MODAL -->
+<div class="modal-overlay" id="bookingModal">
+    <div class="modal-box">
+        <button class="modal-close" onclick="closeModal('bookingModal')">&times;</button>
+        <div class="eyebrow" style="color:var(--olive); margin-bottom:8px;">RESERVE YOUR RETREAT</div>
+        <h3>Book Your Stay</h3>
+        <p>Fill in your details below and our team will confirm your mountain escape.</p>
+        
+        <form id="bookingForm" onsubmit="submitBooking(event)">
+            <div class="form-group">
+                <label>Full Name</label>
+                <input type="text" id="guestName" placeholder="Enter your name" required>
+            </div>
+            <div class="form-group">
+                <label>Destination</label>
+                <select id="destinationSelect">
+                    <option value="Pinecrest Lake">01 / Pinecrest Lake</option>
+                    <option value="Evergreen Valley">02 / Evergreen Valley</option>
+                    <option value="Summit Ridge">03 / Summit Ridge</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Check-in Date</label>
+                <input type="date" id="checkinDate" required>
+            </div>
+            <button type="submit" class="submit-btn">Confirm Reservation</button>
+        </form>
+    </div>
+</div>
+
+<!-- DESTINATION DETAILS MODAL -->
+<div class="modal-overlay" id="destinationModal">
+    <div class="modal-box">
+        <button class="modal-close" onclick="closeModal('destinationModal')">&times;</button>
+        <div class="eyebrow" id="destTag" style="color:var(--olive); margin-bottom:8px;"></div>
+        <h3 id="destTitle"></h3>
+        <p id="destDesc"></p>
+        <button class="submit-btn" id="destBookBtn">Book This Destination ↗</button>
+    </div>
+</div>
+
+<script>
+// MOBILE NAVBAR
+const menu = document.getElementById("menu");
+const nav = document.getElementById("nav");
+
+menu.addEventListener("click",()=>{
+    nav.classList.toggle("active");
+    menu.classList.toggle("fa-bars");
+    menu.classList.toggle("fa-xmark");
+});
+
+document.querySelectorAll("#nav a").forEach(link=>{
+    link.addEventListener("click",()=>{
+        nav.classList.remove("active");
+        menu.classList.add("fa-bars");
+        menu.classList.remove("fa-xmark");
+    });
+});
+
+// SCROLL REVEAL
+const observer = new IntersectionObserver((entries)=>{
+    entries.forEach(entry=>{
+        if(entry.isIntersecting){
+            entry.target.classList.add("show");
+            observer.unobserve(entry.target);
+        }
+    });
+},{threshold:0.12});
+
+document.querySelectorAll(".reveal").forEach(element=>{
+    observer.observe(element);
+});
+
+// MODAL CONTROLS
+function openBookingModal(selectedDest = null) {
+    closeModal('destinationModal');
+    if (selectedDest) {
+        document.getElementById('destinationSelect').value = selectedDest;
+    }
+    document.getElementById('bookingModal').classList.add('active');
+}
+
+function openDestinationModal(title, tag, desc) {
+    document.getElementById('destTitle').innerText = title;
+    document.getElementById('destTag').innerText = tag;
+    document.getElementById('destDesc').innerText = desc;
+    document.getElementById('destBookBtn').onclick = function() {
+        openBookingModal(title);
+    };
+    document.getElementById('destinationModal').classList.add('active');
+}
+
+function closeModal(modalId) {
+    document.getElementById(modalId).classList.remove('active');
+}
+
+// Close modal on outside click
+window.addEventListener('click', function(e) {
+    if (e.target.classList.contains('modal-overlay')) {
+        e.target.classList.remove('active');
+    }
+});
+
+// Handle Booking Form Submission
+function submitBooking(e) {
+    e.preventDefault();
+    const name = document.getElementById('guestName').value;
+    const dest = document.getElementById('destinationSelect').value;
+    const date = document.getElementById('checkinDate').value;
+    
+    alert(`Thank you, ${name}! Your stay at ${dest} for ${date} has been requested. We will contact you shortly.`);
+    document.getElementById('bookingForm').reset();
+    closeModal('bookingModal');
+}
+</script>
+
+</body>
+</html>
+
+```
